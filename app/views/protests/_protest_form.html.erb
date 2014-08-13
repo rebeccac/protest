@@ -1,0 +1,19 @@
+<div id="protest_form">
+	<%= simple_form_for(@protest) do |f| %>
+		<%= render 'common/form_errors', object: @protest %>
+
+		<%= f.input :title, placeholder: 'Name of Protest' %>
+		<%= f.input :date %>
+		<%= f.input :time %>
+		<%= f.input :starting_location %>
+		<%= f.input :state, :collection => ['ACT','NSW','NT','QLD','SA','TAS','VIC','WA'] %>
+		<%= f.input :organisation %>
+		<%= f.input :more_info %>
+		<%= f.input :website %>
+		<%= f.input :twitter %>
+		<%= f.input :facebook %>
+		<%= f.input :email %>
+		<%= f.input :visible %>
+		<%= f.submit %>
+	<% end %>
+</div>

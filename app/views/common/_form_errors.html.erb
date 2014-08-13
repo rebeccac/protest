@@ -1,0 +1,8 @@
+<!-- If object passed to form_errors partial has errors, display them all as unordered list -->
+<% if object.errors.any? %>
+	<ul id="form-errors">
+		<% object.errors.full_messages.each do |message| %>
+			<li><%= message %></li>
+		<% end %>
+	</ul>
+<% end %>
