@@ -112,7 +112,10 @@ left: 0px; }
 		li {
 			@include OpenSans;
 			color: #f2f2eb;
-			padding: 15px 0;
+			padding: 15px 20px;
+			a {
+				color: #f2f2eb;
+			}
 		}
 	}
 }

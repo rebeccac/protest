@@ -46,6 +46,9 @@
 				<li>
 					<%= link_to "Protests", protests_path %>
 				</li>
+				<li>
+						<%= link_to "Related Sites", related_sites_path %>
+					</li>
 				<% if signed_in? %>
 					<li>
 						<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
