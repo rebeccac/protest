@@ -7,12 +7,13 @@ class CreateProtests < ActiveRecord::Migration
       t.string :starting_location
       t.string :state
       t.string :organisation
-      t.string :more_info
+      t.text :more_info
       t.string :website
       t.string :twitter
       t.string :facebook
       t.string :email
-      t.boolean :visible, default:true
+      t.boolean :visible, default: true
+      t.references :user, index: true
 
       t.timestamps
     end

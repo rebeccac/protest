@@ -2,28 +2,30 @@
 
 one:
   title: MyString
-  date: 2014-08-13
-  time: 2014-08-13 22:33:11
+  date: 2014-08-14
+  time: 2014-08-14 16:43:53
   starting_location: MyString
   state: MyString
   organisation: MyString
-  more_info: MyString
+  more_info: MyText
   website: MyString
   twitter: MyString
   facebook: MyString
   email: MyString
   visible: false
+  user_id: 
 
 two:
   title: MyString
-  date: 2014-08-13
-  time: 2014-08-13 22:33:11
+  date: 2014-08-14
+  time: 2014-08-14 16:43:53
   starting_location: MyString
   state: MyString
   organisation: MyString
-  more_info: MyString
+  more_info: MyText
   website: MyString
   twitter: MyString
   facebook: MyString
   email: MyString
   visible: false
+  user_id: 

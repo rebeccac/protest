@@ -1,40 +1,65 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Protestaustralia</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-	<nav>
-		<ul>
-			<li>
-				<%= link_to "Home", root_path %>
-			</li>
-			<li>
-				<%= link_to "New Protest", new_path %>
-			</li>
-			<li>
-				<%= link_to "Protests", protests_path %>
-			</li>
-			<li>
-				<%= link_to "Sign Up", new_user_registration_path, :method => :get %>
-			</li>
-			<li>
-				<%= link_to "Sign in", new_user_session_path, :method => :get %>
-			</li>
-			<li>
-				<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-			</li>
-		</ul>
-	</nav>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<!-- devise flash notices -->
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
-<%= yield %>
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
-</body>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body class="page-body page-body-left">
+	<header class="header page-body page-body-left">
+		<div id="menu-button" class="menu-button-left">&#9776;</div>
+		<h2 id="top-bar">Protest Australia</h2>
+		<nav>
+			<ul>
+				<li class="white">
+					<% if signed_in? %>
+						<p>Logged in as <%= current_user.email %></p>
+					<% end %>
+				</li>
+			</ul>
+		</nav>
+	</header>
+		<div id="container">
+			<!-- devise flash notices -->
+			<p class="notice"><%= notice %></p>
+			<p class="alert"><%= alert %></p>
+		    <%= yield %>
+		    <%= javascript_include_tag "application" %>
+		</div>
+		  <div id="slider" class="slidermenu slidermenu-left">
+		  	<h2>Protest Australia</h2>
+			<br>
+			<nav>
+			<ul>
+				<li>
+					<%= link_to "Home", root_path %>
+				</li>
+				<li>
+					<%= link_to "New Protest", new_path %>
+				</li>
+				<li>
+					<%= link_to "Protests", protests_path %>
+				</li>
+				<% if signed_in? %>
+					<li>
+						<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+					</li>
+				<% else %>
+					<li>
+						<%= link_to "Sign in", new_user_session_path, :method => :get %>
+					</li>
+					<li>
+						<%= link_to "Sign Up", new_user_registration_path, :method => :get %>
+					</li>
+				<% end %>
+			</ul>
+		</nav>
+	</div>
+  </body>
 </html>

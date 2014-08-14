@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140813130311) do
+ActiveRecord::Schema.define(version: 20140814071353) do
 
   create_table "protests", force: true do |t|
     t.string   "title"
@@ -20,15 +20,18 @@ ActiveRecord::Schema.define(version: 20140813130311) do
     t.string   "starting_location"
     t.string   "state"
     t.string   "organisation"
-    t.string   "more_info"
+    t.text     "more_info"
     t.string   "website"
     t.string   "twitter"
     t.string   "facebook"
     t.string   "email"
     t.boolean  "visible",           default: true
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "protests", ["user_id"], name: "index_protests_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

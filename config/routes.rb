@@ -1,7 +1,4 @@
 Protestaustralia::Application.routes.draw do
-  get "protests/index"
-  get "protests/new"
-  get "protests/create"
   devise_for :users
   root to: 'pages#index'
 

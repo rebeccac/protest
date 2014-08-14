@@ -1,19 +1,29 @@
-<div id="protest_form">
+<div class="row" id="protest_form">
 	<%= simple_form_for(@protest) do |f| %>
 		<%= render 'common/form_errors', object: @protest %>
-
-		<%= f.input :title, placeholder: 'Name of Protest' %>
-		<%= f.input :date %>
+	<div class="large-6 columns">
+		<%= f.input :title, placeholder: 'Name of Protest', input_html: { class: "textfield" } %>
+		<%= f.input :date, order: [:day, :month, :year] %>
 		<%= f.input :time %>
 		<%= f.input :starting_location %>
 		<%= f.input :state, :collection => ['ACT','NSW','NT','QLD','SA','TAS','VIC','WA'] %>
-		<%= f.input :organisation %>
+		<%= f.input :email, placeholder: 'user@example.com' %>
+				<%= f.input :organisation %>
+
+	</div>
+	<div class="large-6 columns">
+
 		<%= f.input :more_info %>
 		<%= f.input :website %>
-		<%= f.input :twitter %>
+		<%= f.input :twitter, input_html: { value: "@" } %>
 		<%= f.input :facebook %>
-		<%= f.input :email %>
 		<%= f.input :visible %>
+	</div>
+</div>
+<div class="row submit_button">
+	<div class="12-large columns">
 		<%= f.submit %>
+	</div>
+</div>
 	<% end %>
 </div>

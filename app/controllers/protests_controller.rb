@@ -7,22 +7,23 @@ class ProtestsController < ApplicationController
   	@protest = Protest.new
   end
 
+  # create a new protest using form
   def create
-  	#create Protest instance and pass it the Protest variable submitted via form
-  	@protest = Protest.new(protest_params) #get protest parameters submitted via form from protest_params method
+    # create protest instance var with values submitted
+    @protest = current_user.protests.new(protest_params)
 	
-	#attempt to save user
-  	if @protest.save #if Protest instance saves successfully, send success flash message
+	# attempt to save user
+  	if @protest.save 
   		flash[:success] = "Thank you, your protest has been posted"
   		redirect_to root_url #redirect to homepage
   	else
-  		render 'http://www.google.com'
+  		render 'new' # re-render form
   	end
   end
 
   private
   #In Rails 4, needed parameters must be marked as required
   def protest_params
-    params.require(:protest).permit(:title, :date, :time, :state, :visible)
+    params.require(:protest).permit(:title, :date, :time, :starting_location, :state, :email, :organisation, :more_info, :website, :twitter, :facebook, :visible)
   end
 end

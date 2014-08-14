@@ -37,8 +37,12 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'devise'
-gem 'simple_form'
+gem 'devise' # user authentication
+gem 'simple_form' # forms
+gem 'foundation-rails'
+gem 'activevalidators' # model validation: https://github.com/franckverrot/activevalidators
+gem 'less-rails'
+gem 'therubyracer'
 
 
 # Use ActiveModel has_secure_password
