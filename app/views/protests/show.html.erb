@@ -1,0 +1,51 @@
+<%= provide(:title, "#{@protest.title} | ProtestAustralia") %>
+<h1><%= @protest.title %></h1>
+
+<div class="row">
+	<div class="large-6 columns">
+		<div class="box grey-background">
+			<h3 class="protest-heading inline-block">Date: </h3>
+			<p class="details inline-block"><%= Date.parse(@protest.date.to_s).strftime("%A %e %B %Y") %></p>
+			
+			<br> 
+			
+			<h3 class="protest-heading inline-block">Time: </h3>
+			<p class="inline-block"><%= Time.parse(@protest.time.to_s).strftime("%H:%M") %></p>
+
+			<br>
+
+			<h3 class="protest-heading inline-block">State: </h3>
+			<p class="inline-block"><%= @protest.state %></p>
+
+			<br>
+
+			<h3 class="protest-heading inline-block">Starting location: </h3>
+			<p class="inline-block"><%= @protest.starting_location %></p>
+		</div>
+
+			<div class="box grey-background">
+				<h3 class="protest-heading inline-block">More info: </h3>
+				<% unless @protest.more_info.empty? %>
+					<p class="details inline-block"><%= @protest.more_info %></p>
+				<% else %>
+					<p class="details inline-block">N/A</p>
+				<% end %>
+			</div>
+
+	</div><!-- large-6 -->
+	
+	
+	<div class="large-6 columns">
+		<div class="box grey-background">
+
+			<h3 class="protest-heading inline-block">Organisers: </h3>
+			<% unless @protest.organisation.empty? %>
+				<p class="details inline-block"><%= @protest.organisation %></p>
+				<br>
+			<% else %>
+				<p class="details inline-block">N/A</p>
+			<% end %>
+
+		</div>
+	</div><!-- large-6 -->
+</div><!-- row -->

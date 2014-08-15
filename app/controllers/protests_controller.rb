@@ -15,11 +15,17 @@ class ProtestsController < ApplicationController
 	# attempt to save user
   	if @protest.save 
   		flash[:success] = "Thank you, your protest has been posted"
-  		redirect_to root_url #redirect to homepage
+  		redirect_to protests_path #redirect to homepage
   	else
-  		render 'new' # re-render form
+      flash[:error] = "Sorry, your protest could not be registered. Please try again."
+  		render :new # re-render form
   	end
   end
+
+  def show
+    @protest = Protest.find(params[:id]) #find Question record with ID passed as param
+  end
+
 
   private
   #In Rails 4, needed parameters must be marked as required

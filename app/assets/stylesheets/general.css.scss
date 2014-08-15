@@ -1,3 +1,56 @@
+@mixin Helvetica {
+   font-family: Helvetica, Arial, sans-serif;
+   font-weight: 200;
+}
+@mixin OpenSans {
+   font-family: 'Open Sans', sans-serif;
+   font-weight: 300;
+}
+
+$orange: #f17a36;
+$yellow: #f3cd36;
+$green: #16b183;
+$pale_blue: #14b9d5;
+$dark_blue: #323a45;
+
+
 .justify {
 	text-align: justify;
+}
+
+ h3.subheading {
+ 	@include OpenSans;
+ 	font-size: 1.5em;
+ 	color: #444;
+ }
+
+ h3.protest-heading {
+ 	@include OpenSans;
+ 	font-size: 1.1em;
+ 	color: $dark_blue;
+ 	font-weight: 600;
+ }
+
+.inline-block {
+ 	display: inline-block;
+ }
+
+ .centered-contents {
+ 	display: block;
+ 	width:90%;
+    margin: 0 auto;
+    text-align: center;
+ }
+
+
+.box {
+	width: 90%;
+	height: auto;
+	display: block;
+	margin: 30px auto;
+	padding: 15px;
+}
+
+.grey-background {
+	background-color: #ddd;
 }
