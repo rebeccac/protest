@@ -43,7 +43,7 @@ gem 'foundation-rails'
 gem 'activevalidators' # model validation: https://github.com/franckverrot/activevalidators
 gem 'less-rails'
 gem 'therubyracer'
-
+gem 'will_paginate', '~> 3.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

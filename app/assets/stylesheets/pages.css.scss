@@ -40,7 +40,7 @@ header {
 	h2#top-bar {
 		@include Helvetica;
 		font-size: 2.5em;
-		color: $yellow;
+		color: $orange;
 		font-weight: 600;
 		line-height: 60px;
 		padding-left: 30px;
@@ -124,7 +124,11 @@ left: 0px; }
 			a {
 				color: #f2f2eb;
 			}
+			&:hover {
+				background-color: $green;
+			}
 		}
+
 	}
 }
 

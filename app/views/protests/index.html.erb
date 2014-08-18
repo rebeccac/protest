@@ -1,5 +1,12 @@
 <% provide(:title, 'All Protests | Protest Australia') %>
 
 <h1>Protests</h1>
-<p>This is the Protests index page.</p>
-<p>It will display a list of all protests.</p>
+
+<% if @protests.any? %> 
+		<ul>
+			<%= render @protests %> <!-- render _protest.html.erb -->
+		</ul>
+		<%= will_paginate %> <!-- calls will_paginate gem & automatically paginates protest results --> 
+	<% else %>
+		<p>There are no protests to display</p>
+	<% end %>
