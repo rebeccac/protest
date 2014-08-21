@@ -12,7 +12,7 @@ $yellow: #f3cd36;
 $green: #16b183;
 $pale_blue: #14b9d5;
 $dark_blue: #323a45;
-
+$cream: #e5d6a7;
 
 .justify {
 	text-align: justify;
@@ -63,8 +63,6 @@ $dark_blue: #323a45;
 /* ********** will_paginate ********** */
 
 .pagination {
-  // position: fixed;
-  // bottom: 0;
   margin-top: 50px;
   background: #f1f1f1;
   border: 1px solid #e5e5e5;
@@ -72,10 +70,10 @@ $dark_blue: #323a45;
   padding: 1em;
   cursor: default;
   a, span {
-    padding: 0.2em 0.3em; 
+    padding: 0.2em 0.3em;
   }
   .disabled {
-    color: #aaaaaa; 
+    color: #aaaaaa;
   }
   .current {
     font-style: normal;
@@ -93,7 +91,7 @@ $dark_blue: #323a45;
     text-decoration: none;
     color: black;
     &:hover, &:focus {
-      text-decoration: underline;    
+      text-decoration: underline;
     }
   }
 }

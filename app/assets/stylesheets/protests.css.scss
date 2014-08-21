@@ -15,6 +15,7 @@ $yellow: #f3cd36;
 $green: #16b183;
 $pale_blue: #14b9d5;
 $dark_blue: #323a45;
+$cream: #e5d6a7;
 
 #container {
 	width: 100%;
@@ -22,6 +23,7 @@ $dark_blue: #323a45;
 	position: absolute;
 	top: 60px;
 	z-index: 1;
+
 
 	h1 {
 		@include OpenSans;
@@ -36,6 +38,18 @@ $dark_blue: #323a45;
 		color: #444;
 		margin: 15px 0;
 	}
+   #message {
+     width: 80%;
+     max-width: 768px;
+     margin: 10px auto;
+     display: block;
+     background-color: $cream;
+     border: 1px solid #333;
+     text-align: center;
+     p {
+        margin: 10px 0;
+     }
+   }
 
 .strong {
  	font-weight: bold;
