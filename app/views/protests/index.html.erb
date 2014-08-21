@@ -3,7 +3,7 @@
 <h1>Protests</h1>
 
 <% if @protests.any? %> 
-		<ul>
+		<ul id="protest_list">
 			<%= render @protests %> <!-- render _protest.html.erb -->
 		</ul>
 		<%= will_paginate %> <!-- calls will_paginate gem & automatically paginates protest results --> 

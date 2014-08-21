@@ -42,28 +42,28 @@
 			<br>
 			<nav>
 			<ul>
-				<li>
-					<%= link_to "Home", root_path %>
+				<li id="yellow">
+					<%= link_to "HOME", root_path %>
 				</li>
-				<li>
-					<%= link_to "New Protest", new_path %>
+				<li id="pale_blue">
+					<%= link_to "NEW PROTEST", new_path %>
 				</li>
-				<li>
-					<%= link_to "Protests", protests_path %>
+				<li id="orange">
+					<%= link_to "PROTESTS", protests_path %>
 				</li>
-				<li>
-						<%= link_to "Related Sites", related_sites_path %>
+				<li id="dark_blue">
+						<%= link_to "RELATED SITES", related_sites_path %>
 					</li>
 				<% if signed_in? %>
-					<li>
-						<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+					<li id="green">
+						<%= link_to "SIGN OUT", destroy_user_session_path, :method => :delete %>
 					</li>
 				<% else %>
-					<li>
-						<%= link_to "Sign in", new_user_session_path, :method => :get %>
+					<li id="green">
+						<%= link_to "SIGN IN", new_user_session_path, :method => :get %>
 					</li>
-					<li>
-						<%= link_to "Sign Up", new_user_registration_path, :method => :get %>
+					<li id="white">
+						<%= link_to "SIGN UP", new_user_registration_path, :method => :get %>
 					</li>
 				<% end %>
 			</ul>

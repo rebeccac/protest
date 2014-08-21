@@ -1,3 +1,22 @@
 <li>
-	<%= link_to protest.title, protest %>
+	<div class="row" data-equalizer>
+		<div class="large-1 columns" data-equalizer-watch>
+			<%= image_tag("protest_sign_small.png", size: "55x55", alt: "Protest sign icon") %>
+		</div>
+		<div class="large-1 columns" data-equalizer-watch>	
+			<p class="strong"><%= protest.state %></p>
+		</div>
+		<div class="large-3 columns" data-equalizer-watch>
+			<h3 class="protest-heading"><%= link_to truncate(protest.title, length: 130), protest %></h3>
+		</div>
+		<div class="large-1 columns" data-equalizer-watch>
+			<p><%= Time.parse(protest.time.to_s).strftime("%H:%M") %> </p>
+		</div>
+		<div class="large-3 columns" data-equalizer-watch>
+			<p><%= Date.parse(protest.date.to_s).strftime("%A %e %B %Y") %></p>
+		</div>
+		<div class="large-3 columns" data-equalizer-watch>
+			<p><%= protest.starting_location %></p>
+		</div>
+	</div><!-- row -->
 </li>

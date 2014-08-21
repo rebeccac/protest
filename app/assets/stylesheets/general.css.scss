@@ -17,6 +17,9 @@ $dark_blue: #323a45;
 .justify {
 	text-align: justify;
 }
+.strong {
+ 	font-weight: bold;
+ }
 
  h3.subheading {
  	@include OpenSans;
@@ -29,6 +32,7 @@ $dark_blue: #323a45;
  	font-size: 1.1em;
  	color: $dark_blue;
  	font-weight: 600;
+ 	margin: 15px 0;
  }
 
 .inline-block {
@@ -59,6 +63,9 @@ $dark_blue: #323a45;
 /* ********** will_paginate ********** */
 
 .pagination {
+  // position: fixed;
+  // bottom: 0;
+  margin-top: 50px;
   background: #f1f1f1;
   border: 1px solid #e5e5e5;
   text-align: center;
