@@ -77,53 +77,53 @@ header {
 /* ********** Menu ********** */
 
 #yellow {
-	border-left: 8px solid $yellow;
+	border-top: 8px solid $yellow;
 	&:hover {
 		position: relative;
 		left: 0;
-		border-left: 12px solid $yellow;
+		border-top: 12px solid $yellow;
 	}
 }
 
 #green {
-	border-left: 8px solid $green;
+	border-top: 8px solid $green;
 	&:hover {
 		position: relative;
 		left: 0;
-		border-left: 12px solid $green;
+		border-top: 12px solid $green;
 	}
 }
 #pale_blue {
-	border-left: 8px solid $pale_blue;
+	border-top: 8px solid $pale_blue;
 	&:hover {
 		position: relative;
 		left: 0;
-		border-left: 12px solid $pale_blue;
+		border-top: 12px solid $pale_blue;
 	}
 }
 #orange {
-	border-left: 8px solid $orange;
+	border-top: 8px solid $orange;
 	&:hover {
 		position: relative;
 		left: 0;
-		border-left: 12px solid $orange;
+		border-top: 12px solid $orange;
 	}
 }
 #dark_blue {
-	border-left: 8px solid lighten($dark_blue, 20%);
+	border-top: 8px solid lighten($dark_blue, 20%);
 	&:hover {
 		position: relative;
 		left: 0;
-		border-left: 12px solid lighten($dark_blue, 20%);
+		border-top: 12px solid lighten($dark_blue, 20%);
 	}
 }
 
 #white {
-	border-left: 8px solid #e5d6a7;
+	border-top: 8px solid #e5d6a7;
 	&:hover {
 		position: relative;
 		left: 0;
-		border-left: 12px solid #e5d6a7;
+		border-top: 12px solid #e5d6a7;
 	}
 }
 
