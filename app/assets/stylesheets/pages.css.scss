@@ -61,10 +61,10 @@ header {
 			position: absolute;
 			top: 0;
 			li {
-				@include OpenSans;
+				@include Helvetica;
 				color: #f2f2eb;
 				padding: 0 15px;
-				font-size: 0.9em;
+				font-size: 0.7em;
 				font-weight: 600;
 				letter-spacing: 1px;
 				display: inline-block;

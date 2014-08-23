@@ -13,47 +13,50 @@
 
   <body>
 	<header class="header">
-		<nav>
-			<ul>
-				<li id="yellow">
-					<%= link_to "HOME", root_path %>
-				</li>
-				<li id="pale_blue">
-					<%= link_to "NEW PROTEST", new_path %>
-				</li>
-				<li id="orange">
-					<%= link_to "PROTESTS", protests_path %>
-				</li>
-				<li id="dark_blue">
-						<%= link_to "RELATED SITES", related_sites_path %>
-					</li>
-            <% if signed_in? %>
-                  <li id="white">
-                     LOGGED IN
-                  </li>
-					<li id="green">
-						<%= link_to "SIGN OUT", destroy_user_session_path, :method => :delete %>
-					</li>
-				<% else %>
-               <li id="white">
-                  <%= link_to "SIGN UP", new_user_registration_path, :method => :get %>
+      <div id="menu">
+   		<nav>
+   			<ul>
+   				<li id="yellow">
+   					<%= link_to "HOME", root_path %>
+   				</li>
+   				<li id="pale_blue">
+                  <%= link_to "PROTESTS", protests_path %>
                </li>
-					<li id="green">
-						<%= link_to "SIGN IN", new_user_session_path, :method => :get %>
-					</li>
-				<% end %>
-			</ul>
-		</nav>
-      <h2 id="top-bar">Protest Australia</h2>
+   				<li id="orange">
+                  <%= link_to "ADD A PROTEST", new_path %>
+   				</li>
+   				<li id="dark_blue">
+   						<%= link_to "RELATED SITES", related_sites_path %>
+   					</li>
+               <% if signed_in? %>
+                     <li id="white">
+                        LOGGED IN
+                     </li>
+   					<li id="green">
+   						<%= link_to "SIGN OUT", destroy_user_session_path, :method => :delete %>
+   					</li>
+   				<% else %>
+                  <li id="white">
+                     <%= link_to "SIGN UP", new_user_registration_path, :method => :get %>
+                  </li>
+   					<li id="green">
+   						<%= link_to "SIGN IN", new_user_session_path, :method => :get %>
+   					</li>
+   				<% end %>
+   			</ul>
+   		</nav>
+      </div>
+      <div id="title">
+         <h2 id="top-bar">Protest Australia</h2>
+      </div>
+      <div id="logo">
+         <%= image_tag("protest_sign_white.png", size: "60x60", alt: "Protest sign icon", id:"header-image") %>
+      </div>
 	</header>
 		<div id="container">
 			<% flash.each do |key, value| %>
 				<div id="message"><p><%= value %></p></div>
 			<% end %>
-			<!-- devise flash notices -->
-				<!-- <p class="notice"><%= notice %></p>
-				<p class="alert"><%= alert %></p> -->
-			<!-- end flash notices -->
 		    <%= yield %>
 		    <%= javascript_include_tag "application" %>
 		</div>

@@ -35,6 +35,26 @@ $cream: #e5d6a7;
  	margin: 15px 0;
  }
 
+#menu {
+      float: left;
+      width: auto;
+}
+#title {
+   float: right;
+   width: auto;
+}
+#logo {
+   width: 75px;
+   float: right;
+}
+
+#header-image {
+   float: right;
+   width: 60px;
+   height: 60px;
+   padding-right: 15px;
+}
+
 .inline-block {
  	display: inline-block;
  }
