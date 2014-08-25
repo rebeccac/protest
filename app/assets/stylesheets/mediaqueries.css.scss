@@ -1,0 +1,32 @@
+@mixin OpenSans {
+   font-family: 'Open Sans', sans-serif;
+   font-weight: 300;
+}
+
+@media (min-width: 1300px) {
+   .protest {
+      display: inline-block;
+      width: 24.5%;
+   }
+   .date {
+      @include OpenSans;
+      font-size: 1.7em;
+      color: #444;
+      font-weight: 400;
+      padding-left: 15px;
+   }
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+   .protest {
+      display: inline-block;
+      width: 32.5%;
+   }
+}
+
+@media (max-width: 768px) {
+   .protest {
+      display: inline-block;
+      width: 49.5%;
+   }
+}

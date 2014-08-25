@@ -93,13 +93,15 @@ $maroon: #590902;
 }
 
 .state {
-   width: 80px;
-   height: 80px;
+   width: 90px;
+   height: 90px;
+   border-radius: 50%;
    @include Helvetica;
    font-size: 2.2em;
    color: #f2f2eb;
-   line-height: 80px;
+   line-height: 90px;
    text-align: center;
+   display: inline-block;
 }
 
 .act {

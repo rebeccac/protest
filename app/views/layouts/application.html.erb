@@ -29,9 +29,9 @@
    						<%= link_to "RELATED SITES", related_sites_path %>
    					</li>
                <% if signed_in? %>
-                     <li id="white">
-                        LOGGED IN
-                     </li>
+                  <li id="white">
+                     <%= link_to "MY PROTESTS", my_protests_path %>
+                  </li>
    					<li id="green">
    						<%= link_to "SIGN OUT", destroy_user_session_path, :method => :delete %>
    					</li>
