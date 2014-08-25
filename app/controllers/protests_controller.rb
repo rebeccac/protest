@@ -1,4 +1,7 @@
 class ProtestsController < ApplicationController
+
+   before_filter :auth, only: [:create, :my_protests]
+
   def index
   	  @protests = Protest.visible(params)
   end
@@ -11,9 +14,9 @@ class ProtestsController < ApplicationController
   def create
     # create protest instance var with values submitted
     @protest = current_user.protests.new(protest_params)
-	
+
 	# attempt to save user
-  	if @protest.save 
+  	if @protest.save
   		flash[:success] = "Thank you, your protest has been posted"
   		redirect_to protests_path #redirect to homepage
   	else
@@ -26,10 +29,13 @@ class ProtestsController < ApplicationController
     @protest = Protest.find(params[:id]) #find Question record with ID passed as param
   end
 
+def my_protests
+    @protests = current_user.my_protests(params)
+end
 
   private
   #In Rails 4, needed parameters must be marked as required
   def protest_params
-    params.require(:protest).permit(:title, :date, :time, :starting_location, :state, :email, :organisation, :more_info, :website, :twitter, :facebook, :visible)
+    params.require(:protest).permit(:title, :date, :time, :starting_location, :state, :email, :organisation, :more_info, :website, :twitter, :facebook, :visible, :march_route)
   end
 end

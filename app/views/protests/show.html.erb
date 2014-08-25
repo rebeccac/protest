@@ -6,9 +6,9 @@
 		<div class="box grey-background">
 			<h3 class="protest-heading inline-block">Date: </h3>
 			<p class="details inline-block"><%= Date.parse(@protest.date.to_s).strftime("%A %e %B %Y") %></p>
-			
-			<br> 
-			
+
+			<br>
+
 			<h3 class="protest-heading inline-block">Time: </h3>
 			<p class="inline-block"><%= Time.parse(@protest.time.to_s).strftime("%H:%M") %></p>
 
@@ -21,6 +21,11 @@
 
 			<h3 class="protest-heading inline-block">Starting location: </h3>
 			<p class="inline-block"><%= @protest.starting_location %></p>
+
+			<br>
+
+			<h3 class="protest-heading inline-block">March route: </h3>
+			<p class="inline-block"><%= @protest.march_route %></p>
 		</div>
 
 			<div class="box grey-background">
@@ -33,8 +38,8 @@
 			</div>
 
 	</div><!-- large-6 -->
-	
-	
+
+
 	<div class="large-6 columns">
 		<div class="box grey-background">
 

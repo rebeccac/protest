@@ -1,0 +1,12 @@
+<% provide(:title, 'View My Protests | Protest Australia') %>
+
+<h1>My Protests</h1>
+
+<% if @protests.any? %>
+   <ul id="protest_list">
+      <%= render @protests %> <!-- render _protest.html.erb -->
+   </ul>
+   <%= will_paginate %> <!-- calls will_paginate gem & automatically paginates protest results -->
+<% else %>
+   <p>You have not posted any protests</p>
+<% end %> <!-- end protests -->
