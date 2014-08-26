@@ -6,9 +6,11 @@
 @media (min-width: 1300px) {
    .protest {
       display: inline-block;
+      background-color: #444;
+      color: #f2f2eb;
       width: 24.5%;
    }
-   .date {
+   .date-heading {
       @include OpenSans;
       font-size: 1.7em;
       color: #444;

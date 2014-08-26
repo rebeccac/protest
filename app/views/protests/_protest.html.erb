@@ -4,7 +4,7 @@
 			<div class="<%= protest.state.downcase %> state">
 				<%= protest.state %>
 			</div>
-			<span class="date"><%= Date.parse(protest.date.to_s).strftime("%d %b %Y") %></span>
+			<span class="date-heading"><%= Date.parse(protest.date.to_s).strftime("%d %b %Y") %></span>
 		</div>
 		<div class="large-12 columns" data-equalizer-watch>
 			<h3 class="protest-heading"><%= link_to truncate(protest.title, length: 130), protest %></h3>

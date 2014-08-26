@@ -2,28 +2,55 @@
 	<%= simple_form_for(@protest) do |f| %>
 		<%= render 'common/form_errors', object: @protest %>
 	<div class="large-6 columns">
-		<%= f.input :title, placeholder: 'Name of Protest', input_html: { class: "textfield" } %>
-		<%= f.input :date, order: [:day, :month, :year] %>
-		<%= f.input :time %>
-		<%= f.input :starting_location %>
-		<%= f.input :march_route %>
-		<%= f.input :state, :collection => ['ACT','NSW','NT','QLD','SA','TAS','VIC','WA'] %>
-		<%= f.input :email, placeholder: 'user@example.com' %>
-		<%= f.input :organisation, label: 'Organisers' %>
+		<fieldset class="fieldset">
+			<legend class="legend">Protest Details</legend>
+				<%= f.input :title, placeholder: 'Name of Protest', input_html: { class: "textfield" } %>
+				<%= f.input :date, order: [:day, :month, :year] %>
+				<%= f.input :time %>
+		</fieldset>
+
+		<fieldset class="fieldset">
+			<legend class="legend">Location</legend>
+				<%= f.input :state, :collection => ['ACT','NSW','NT','QLD','SA','TAS','VIC','WA'] %>
+				<%= f.input :starting_location, placeholder: 'Starting location' %>
+				<%= f.input :march_route, placeholder: 'March route' %>
+		</fieldset>
+
+		<fieldset class="fieldset">
+			<legend class="legend">Contact</legend>
+				<%= f.input :email, placeholder: 'user@example.com' %>
+				<%= f.input :organisation, label: 'Organisers', placeholder: 'Name(s) or affiliated organisation' %>
+		</fieldset>
+
 
 	</div>
 	<div class="large-6 columns">
+		<fieldset class="fieldset">
+			<legend class="legend">Social Media</legend>
+				<%= f.input :twitter, input_html: { value: "@" } %>
+				<%= f.input :facebook, placeholder: 'Facebook URL', input_html: { type: 'url' } %>
+				<%= f.input :website, placeholder: 'Website URL', input_html: { type: 'url' } %>
+		</fieldset>
 
-		<%= f.input :more_info, placeholder: 'More info, eg protest route etc...' %>
-		<%= f.input :website %>
-		<%= f.input :twitter, input_html: { value: "@" } %>
-		<%= f.input :facebook %>
+		<fieldset class="fieldset">
+			<legend class="legend">Additional Info</legend>
+				<ul class="disc-list indent-20">
+					<li class="red justify">
+						<p>If possible, please indicate the time speeches are expected to begin so people
+						who are unable to march can participate by going directly to the destination.</p>
+					</li>
+				</ul>
+				<%= f.input :more_info, placeholder: 'More info...' %>
+		</fieldset>
 		<%= f.input :visible %>
 	</div>
 </div>
-<div class="row submit_button">
+<div class="row buttons">
 	<div class="12-large columns">
-		<%= f.submit %>
+		<div class="centered-contents">
+			<%= f.submit %>  <%=f.button :button, 'Reset', :type => 'reset' %>
+		</div>
+
 	</div>
 </div>
 	<% end %>
