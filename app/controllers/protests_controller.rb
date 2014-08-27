@@ -1,6 +1,6 @@
 class ProtestsController < ApplicationController
 
-   before_filter :auth, only: [:create, :my_protests]
+   before_filter :auth, only: [:create, :my_protests, :edit, :update]
 
   def index
   	  @protests = Protest.visible(params)
@@ -31,6 +31,22 @@ class ProtestsController < ApplicationController
 
 def my_protests
     @protests = current_user.my_protests(params)
+end
+
+def edit
+   #Ensure user can only edit his/her own protests by getting current user's protests and finding the correct protest id - if user doesn't have a protest with that id, won't be able to edit.
+   @protest = current_user.protests.find(params[:id])
+end
+
+def update
+    #Ensure user can only edit his/her own protestss by getting current user's protestss and finding the correct protest id - if user doesn't have a protest with that id, won't be able to edit.
+    @protest = current_user.protests.find(params[:id])
+    if @protest.update_attributes(params[:protest].permit(:title, :date, :time, :starting_location, :state, :email, :organisation, :more_info, :website, :twitter, :facebook, :visible, :march_route)) # attempt to update question object's attributes with values submitted through form - must permit every attribute you want users to be able to update.
+      flash[:success] = "Your protest has been updated."
+      redirect_to @protest # redirect to updated protest
+    else
+      render 'edit' # if unsuccessful, render edit page again
+    end
 end
 
   private

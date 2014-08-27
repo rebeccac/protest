@@ -4,22 +4,22 @@
 	<div class="large-6 columns">
 		<fieldset class="fieldset">
 			<legend class="legend">Protest Details</legend>
-				<%= f.input :title, placeholder: 'Name of Protest', input_html: { class: "textfield" } %>
-				<%= f.input :date, order: [:day, :month, :year] %>
-				<%= f.input :time %>
+				<%= f.input :title, placeholder: 'Name of Protest', input_html: { class: "textfield", tabindex: "1" } %>
+				<%= f.input :date, order: [:day, :month, :year], input_html: { tabindex: "2" } %>
+				<%= f.input :time, input_html: { tabindex: "3" } %>
 		</fieldset>
 
 		<fieldset class="fieldset">
 			<legend class="legend">Location</legend>
-				<%= f.input :state, :collection => ['ACT','NSW','NT','QLD','SA','TAS','VIC','WA'] %>
-				<%= f.input :starting_location, placeholder: 'Starting location' %>
-				<%= f.input :march_route, placeholder: 'March route' %>
+				<%= f.input :state, :collection => ['ACT','NSW','NT','QLD','SA','TAS','VIC','WA'], input_html: { tabindex: "4" } %>
+				<%= f.input :starting_location, placeholder: 'Starting location', input_html: { tabindex: "5" } %>
+				<%= f.input :march_route, placeholder: 'March route', input_html: { tabindex: "6" } %>
 		</fieldset>
 
 		<fieldset class="fieldset">
 			<legend class="legend">Contact</legend>
-				<%= f.input :email, placeholder: 'user@example.com' %>
-				<%= f.input :organisation, label: 'Organisers', placeholder: 'Name(s) or affiliated organisation' %>
+				<%= f.input :email, placeholder: 'user@example.com', input_html: { tabindex: "7" } %>
+				<%= f.input :organisation, label: 'Organisers', placeholder: 'Name(s) or affiliated organisation', input_html: { tabindex: "8" } %>
 		</fieldset>
 
 
@@ -28,8 +28,8 @@
 		<fieldset class="fieldset">
 			<legend class="legend">Social Media</legend>
 				<%= f.input :twitter, input_html: { value: "@" } %>
-				<%= f.input :facebook, placeholder: 'Facebook URL', input_html: { type: 'url' } %>
-				<%= f.input :website, placeholder: 'Website URL', input_html: { type: 'url' } %>
+				<%= f.input :facebook, placeholder: 'Facebook URL', input_html: { type: 'url', tabindex: "9" } %>
+				<%= f.input :website, placeholder: 'Website URL', input_html: { type: 'url', tabindex: "10" } %>
 		</fieldset>
 
 		<fieldset class="fieldset">
@@ -40,7 +40,7 @@
 						who are unable to march can participate by going directly to the destination.</p>
 					</li>
 				</ul>
-				<%= f.input :more_info, placeholder: 'More info...' %>
+				<%= f.input :more_info, placeholder: 'More info...', input_html: { tabindex: "11" } %>
 		</fieldset>
 		<%= f.input :visible %>
 	</div>

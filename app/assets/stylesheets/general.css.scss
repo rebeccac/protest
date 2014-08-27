@@ -33,6 +33,14 @@ $pale_grey: #cccccc;
    padding-left: 20px;
 }
 
+.red-text {
+   color: $red;
+      &:link    { color: $red; }  /* unvisited links */
+      &:visited { color: $dark_grey; }  /* visited links   */
+      a:hover   { color: $red; }  /* user hovers     */
+      a:active  { color: $red; }  /* active links    */
+}
+
  h3.subheading {
  	@include OpenSans;
  	font-size: 1.5em;
