@@ -22,6 +22,13 @@ $white: #f2f2eb;
 $dark_grey: #444444;
 $pale_grey: #cccccc;
 
+body {
+   // background-image: url('../assets/sos.png');
+   // repeat: repeat;
+   height: 100%;
+   width: 100%;
+}
+
 .justify {
 	text-align: justify;
 }
@@ -33,6 +40,13 @@ $pale_grey: #cccccc;
    padding-left: 20px;
 }
 
+.dark-grey-text {
+   color: $dark_grey;
+      &:link    { color: $dark_grey; }  /* unvisited links */
+      &:visited { color: $dark_grey; }  /* visited links   */
+      a:hover   { color: $dark_grey; }  /* user hovers     */
+      a:active  { color: $dark_grey; }  /* active links    */
+}
 .red-text {
    color: $red;
       &:link    { color: $red; }  /* unvisited links */
@@ -107,6 +121,11 @@ ul.disc-list { // display normal (disc) list style
 	background-color: #ddd;
 }
 
+.med-icon {
+   font-size: 1.5em;
+   display: inline-block;
+   padding: 0 5px;
+}
 
 /* ********** will_paginate ********** */
 

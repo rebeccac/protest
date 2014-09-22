@@ -26,7 +26,8 @@
 		<div class="large-12 columns">
 			<% if on_my_protests_page? %>
          	<!-- Call on_my_protests_page? helper method in protests_helper.rb - checks if user is on my_protests page. If so, display Edit button. Otherwise (if on main Protests page), don't. -->
-         		<p><%= link_to "Edit this protest", edit_protest_path(protest), class: "red-text" %></p>
+         		<p><i class="fa fa-pencil med-icon dark-grey-text"></i><%= link_to "Edit", edit_protest_path(protest), class: "red-text" %></p>
+					<p><i class="fa fa-times med-icon red-text"></i><%= link_to "Delete",  protest,  method: :delete, data: { confirm: 'Are you sure?' } %></p>
          	<% end %>
 		</div>
 	</div><!-- row -->

@@ -12,6 +12,6 @@ class Protest < ActiveRecord::Base
 	def self.visible(params)
   		#return protests where visible attribute = true
   		# paginate, using will_paginate gem - 10 protests per page
-  		where(visible: true).paginate(page: params[:page], order: 'created_at DESC', per_page: 8)
+  		where(visible: true).paginate(page: params[:page], order: 'created_at DESC', per_page: 12)
   	end
 end
