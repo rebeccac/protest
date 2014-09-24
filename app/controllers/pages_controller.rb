@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
   def index
+     @protests = Protest.all(:order => "id desc", :limit => 5).reverse
+     render :layout => 'frontpage'
   end
 
   def related_sites
