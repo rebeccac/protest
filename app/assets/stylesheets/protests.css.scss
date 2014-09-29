@@ -21,7 +21,9 @@ $purple: #674fb1;
 $red: #d54343;
 $maroon: #590902;
 
+$white: #f2f2eb;
 $dark_grey: #444444;
+$charcoal: #282828;
 $pale_grey: #cccccc;
 
 #container {
@@ -41,7 +43,7 @@ $pale_grey: #cccccc;
 	h1 {
 		@include OpenSans;
 		font-size: 2em;
-		color: $dark_grey;
+		color: $orange;
 		font-weight: 400;
 		margin: 30px 0 50px 30px;
 	}

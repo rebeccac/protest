@@ -4,7 +4,14 @@
 	<header class="header-frontpage">
 		<h1 class="front-page">Protest Australia</h1>
 		<div class="authorisation">
-			<div class="button">Register</div><div class="button">Sign In</div>
+<div class="button-small"><i class="fa fa-twitter"></i></div>
+<div class="button-small"><i class="fa fa-facebook"></i></div>
+
+<% if signed_in? %>
+		<%= link_to "My Protests", my_protests_path, class: "button" %> <%= link_to "Sign Out", destroy_user_session_path, :method => :delete, class: "button" %>
+<% else %>
+		<%= link_to "Register", new_user_registration_path, :method => :get, class: "button" %> <%= link_to "Sign In", new_user_session_path, :method => :get, class: "button" %>
+<% end %>
 		</div>
 	</header>
 
@@ -12,36 +19,47 @@
 
 	<div class="bottom">
 		<div class="recent-protests">
-			<div class="protest-front-page protest-1">Protest 1</div>
-			<div class="protest-front-page protest-2">Protest 2</div>
-			<div class="protest-front-page protest-1">Protest 3</div>
-			<div class="protest-front-page protest-2">Protest 4</div>
-			<div class="protest-front-page protest-1">Protest 5</div>
+			<% if @recent_protests.any? %>
+			<ul>
+				<%= render partial: "recent", collection: @recent_protests %>
+			</ul>
+			<% else %>
+				<p>There are no protests available</p>
+			<% end %> <!-- end protests -->
+
 
 		</div>
 		<nav id="frontpage-nav">
 				<div class="menu-item-1" id="purple-menu-item">
 					<div class="menu-item-content">
-						<div class="icon"><span class="helper"></span><%= image_tag("protest_icon.png", alt: "Protest sign icon", id: "protest-icon") %></div>
-						<span class="menu-item-text">Protests</span>
+						<%= link_to protests_path do %>
+							<div class="icon"><span class="helper"></span><%= image_tag("protest_icon.png", alt: "Protest sign icon", id: "protest-icon") %></div>
+						<% end %>
+						<%= link_to "Protests", protests_path, class: "menu-item-text" %>
 					</div>
 				</div>
 				<div class="menu-item-1" id="blue-menu-item">
 					<div class="menu-item-content">
-						<div class="icon"><i class="fa fa-plus"></i></div>
-						<span class="menu-item-text">Add a Protest</span>
+						<%= link_to new_path do %>
+							<div class="icon"><i class="fa fa-plus"></i></div>
+						<% end %>
+						<%= link_to "Add a Protest", new_path, class: "menu-item-text" %>
 					</div>
 				</div>
 				<div class="menu-item-2" id="green-menu-item">
 					<div class="menu-item-content">
-						<div class="icon"><i class="fa fa-user"></i></div>
-							<span class="menu-item-text">My Protests</span>
+						<%= link_to my_protests_path do %>
+							<div class="icon"><i class="fa fa-user"></i></div>
+						<% end %>
+						<%= link_to "My Protests", my_protests_path, class: "menu-item-text" %>
 					</div>
 				</div>
 				<div class="menu-item-1" id="yellow-menu-item">
 					<div class="menu-item-content">
+						<%= link_to related_sites_path do %>
 							<div class="icon"><i class="fa fa-link"></i></div>
-								<span class="menu-item-text">Related Sites</span>
+						<% end %>
+						<%= link_to "Related Sites", related_sites_path, class: "menu-item-text" %>
 					</div>
 				</div>
 				<div class="menu-item-1" id="orange-menu-item">
