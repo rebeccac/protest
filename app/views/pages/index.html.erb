@@ -12,17 +12,37 @@
 			<% else %>
 					<%= link_to "Register", new_user_registration_path, :method => :get, class: "button" %> <%= link_to "Sign In", new_user_session_path, :method => :get, class: "button" %>
 			<% end %>
-			<div class="button-small menu-top-right"><i class="fa fa-bars"></i></div>
+
+			<div class="button-small menu-top-right" id="menu-icon"><i class="fa fa-bars"></i>
+
+				<ul class="dropdown-menu" id="dropdown-menu">
+					<li class="dropdown-menu-item">Protests</li>
+					<li class="dropdown-menu-item">Add a Protest</li>
+					<li class="dropdown-menu-item">My Protests</li>
+					<li class="dropdown-menu-item">Related Sites</li>
+					<li class="dropdown-menu-item">About Us</li>
+					<li class="dropdown-menu-item dropdown-menu-item-last">Contact Us</li>
+				</ul><!-- dropdown-menu -->
+			</div><!-- id:menu-icon -->
+
+
+			<!-- <div class="button-small menu-top-right">
+    			<ul class="hover">
+       			<li class="hoverli">
+						<i class="fa fa-bars"></i>
+						<ul class="dropdown-menu">
+        				  <li class="dropdown-menu-item">Protests</li>
+				        <li class="dropdown-menu-item">Add a Protest</li>
+				        <li class="dropdown-menu-item">My Protests</li>
+				        <li class="dropdown-menu-item">Related Sites</li>
+				        <li class="dropdown-menu-item">About Us</li>
+				        <li class="dropdown-menu-item">Contact Us</li>
+					</ul class="dropdown-menu">
+					<li>
+				</ul>
+			</div> -->
 
 </header>
-<ul class="dropdown-menu">
-	<li class="dropdown-menu-item">Protests</li>
-	<li class="dropdown-menu-item">Add a Protest</li>
-	<li class="dropdown-menu-item">My Protests</li>
-	<li class="dropdown-menu-item">Related Sites</li>
-	<li class="dropdown-menu-item">About Us</li>
-	<li class="dropdown-menu-item">Contact Us</li>
-</ul><!-- dropdown-menu -->
 
 <!-- <div class="bottom">
 	<div class="recent-protests">
