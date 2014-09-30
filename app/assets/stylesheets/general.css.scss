@@ -359,12 +359,15 @@ header.header-frontpage {
                height: 50px;
                line-height: 50px;
                background: url('dotted_background_92percent.png');
-               color: $white;
-               @include Helvetica;
-               font-size: 1em;
                border-bottom: 1px solid rgba(251,251,251,0.2);
                position: relative;
                border-left: 4px solid transparent;
+               a:link, a:visited, a:hover, a:active {
+                  color: $white;
+                  @include Helvetica;
+                  font-size: 1em;
+                  text-decoration: none;
+               }
             }
             .dropdown-menu-item:hover {
                border-left: 4px solid #1f7a7a;

@@ -6,8 +6,6 @@
    <div class="recent-protest-date">
       <%= Date.parse(recent.date.to_s).strftime("%d %B %Y") %>
    </div>
-
-   <p><%= recent.title %></p>
-
-
+   <div class="clear"></div>
+   <div class="recent-protest-details"><%= recent.title %></div>
 </li>
