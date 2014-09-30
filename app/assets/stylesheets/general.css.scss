@@ -29,6 +29,59 @@ body {
    width: 100%;
 }
 
+#container {
+   top: 60px;
+}
+#container-frontpage {
+   top: 0px;
+}
+
+#container,
+#container-frontpage {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   z-index: 1;
+   background-color: #333333;
+
+   h1 {
+      @include OpenSans;
+      font-size: 2em;
+      color: $orange;
+      font-weight: 400;
+      margin: 30px 0 50px 30px;
+   }
+   h1.front-page {
+      font-size: 1.4em;
+      margin: 0 0 0 30px;
+      line-height: 50px;
+      color: $white;
+      @include Helvetica;
+   }
+   p {
+      @include OpenSans;
+      font-size: 1em;
+      color: $dark_grey;
+      margin: 15px 0;
+   }
+   #message {
+     width: 80%;
+     max-width: 768px;
+     margin: 10px auto;
+     display: block;
+     background-color: $cream;
+     border: 1px solid #333;
+     text-align: center;
+     p {
+        margin: 10px 0;
+     }
+   }
+
+.strong {
+    font-weight: bold;
+ }
+
+
 .justify {
 	text-align: justify;
 }
@@ -256,3 +309,29 @@ form {
 
 
 /* ********** end form ********** */
+}
+
+
+.dropdown-menu {
+   width: 180px;
+   height: auto;
+   position: absolute;
+   z-index: 1000;
+   top: 50px;
+   right: 30px;
+   .dropdown-menu-item {
+      display: block;
+      padding-left: 20px;
+      width: 180px;
+      height: 50px;
+      line-height: 50px;
+      background: url('dotted_background_92percent.png');
+      color: $white;
+      @include Helvetica;
+      font-size: 1em;
+      border-bottom: 1px solid rgba(251,251,251,0.2);
+   }
+   .dropdown-menu-item:last-child {
+      border-bottom: 0;
+   }
+}

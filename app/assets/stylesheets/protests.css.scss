@@ -23,59 +23,10 @@ $maroon: #590902;
 
 $white: #f2f2eb;
 $dark_grey: #444444;
-$charcoal: #282828;
+$med_grey: #a2a2a2;
 $pale_grey: #cccccc;
+$charcoal: #282828;
 
-#container {
-   top: 60px;
-}
-#container-frontpage {
-   top: 0px;
-}
-
-#container,
-#container-frontpage {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	z-index: 1;
-
-	h1 {
-		@include OpenSans;
-		font-size: 2em;
-		color: $orange;
-		font-weight: 400;
-		margin: 30px 0 50px 30px;
-	}
-   h1.front-page {
-      font-size: 3.5em;
-      margin: 20px 0 0 30px;
-   }
-	p {
-		@include OpenSans;
-		font-size: 1em;
-		color: $dark_grey;
-		margin: 15px 0;
-	}
-   #message {
-     width: 80%;
-     max-width: 768px;
-     margin: 10px auto;
-     display: block;
-     background-color: $cream;
-     border: 1px solid #333;
-     text-align: center;
-     p {
-        margin: 10px 0;
-     }
-   }
-
-.strong {
- 	font-weight: bold;
- }
-
-
-}
 
 .state {
    width: 90px;
