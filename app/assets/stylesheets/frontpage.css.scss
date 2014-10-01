@@ -48,35 +48,41 @@ body {
    clear: both;
 }
 
-
+.main-content {
+   position: absolute;
+   top: 50px;
+   left: 150px;
+   width: calc(100% - 150px);
+   height: auto;
+}
 h2.front-page-title {
    @include Mohave;
-   font-size: 7em;
-   color: $white;
+   font-size: 5.5em;
+   color: $dark_grey;
    text-align: center;
    position: relative;
-   top: 45%;
+   top: 100px;
    letter-spacing: 2px;
 }
 
 /* ********** Buttons ********** */
 
 .nav-buttons {
-   margin: 0 auto;
-   width: 50%;
-   height: 100px;
-   position: relative;
-   top: 55%;
+   width: 150px;
+   position: absolute;
+   margin-top: 100px;
+
    .nav-item {
-      width: 24.5%;
-      color: $white;
+      width: 150px;
+      height: 150px;
+      color: $dark_grey;
       text-align: center;
-      display: inline-block;
+      display: block;
       position: relative;
       .nav-item-text {
-         @include Mohave;
+         @include Helvetica;
          font-size: 1em;
-         color: $white;
+         color: $dark_grey;
          letter-spacing: 1px;
       }
 
@@ -88,13 +94,13 @@ h2.front-page-title {
          margin: auto;
          position: absolute;
          top: 0; left: 0; bottom: 0; right: 0;
-         color: $white;
+         color: $dark_grey;
          .icon {
             height: 100px;
             width: 100px;
             margin: 10px auto;
             border-radius: 50%;
-            background: url('dotted_background_92percent.png');
+            background: url('dotted_background_76percent.png');
 
             .helper {
                 display: inline-block;
@@ -116,6 +122,9 @@ h2.front-page-title {
             i.purple {
                color: $purple;
             }
+            i.red {
+               color: $red;
+            }
             i.pale-blue {
                color: $pale_blue;
             }
@@ -134,10 +143,9 @@ h2.front-page-title {
                text-shadow: 1px 0 0 #444;
                font-size: 1em;
                letter-spacing: 1px;
-               color: $white;
+               color: $dark_grey;
                text-decoration: none;
             }
-
       }
    }
 }
@@ -153,34 +161,46 @@ h2.front-page-title {
 /* ********** Front Page Recent Protests ********** */
 
    .recent-protests {
-      width: 100%;
-      height: auto;
-      height: 150px;
-      position: absolute;
-      top: 100px;
+      display: block;
+      width: 585px;
+      height: 390px;
+      margin: 0 auto;
+      position: relative;
+      top: 60px;
+      .recent-protests-heading {
+         @include Helvetica;
+         font-size: 1.1em;
+         margin-bottom: 8px;
+      }
 
       .protest-front-page {
-         width: 20%;
-         height: 150px;
+         width: 180px;
+         height: 180px;
          display: inline-block;
          float: left;
          position: relative;
          color: $white;
+         margin: 0 15px 15px 0;
       }
 
-      .recent-protest-box:nth-child(even) {
-         background: url('dotted_background_92percent.png');
+      .recent-protest-box:first-child {
+         background-color: #006699;
       }
-      .recent-protest-box:nth-child(odd) {
-         background: url('dotted_background_76percent.png');
+      .recent-protest-box:nth-child(6) {
+         background-color: #006699;
       }
-      .recent-protest-box:last-child {
-         border-right: 0;
+      .recent-protest-box:nth-child(2),
+      .recent-protest-box:nth-child(5) {
+         background-color: #3399cc;
+      }
+      .recent-protest-box:nth-child(3),
+      .recent-protest-box:nth-child(4) {
+         background-color: #3399ff;
       }
       .recent-protest-box {
-         border-right: solid 1px rgba(251,251,251,0.3);
          text-align: center;
          @include Helvetica;
+         font-size: 0.9em;
          .recent-protest-date {
             position: absolute;
             top: 10px; left: 60px;
@@ -191,6 +211,7 @@ h2.front-page-title {
             left: 20px;
             color: $white;
             margin-top: 15px;
+            font-size: 0.9em;
          }
 
          .state-box {
@@ -236,110 +257,6 @@ h2.front-page-title {
          }
 
       }
-
-
-
-
-/* ********** End of Front Page Recent Protests ********** */
-
-
-   #frontpage-nav {
-      .menu-item-1 {
-         width: 33.3%;
-      }
-      .menu-item-2 {
-         width: 33.4%;
-      }
-      .menu-item-1,
-      .menu-item-2 {
-         height: 200px;
-         margin: 0 auto;
-         text-align: center;
-         display: inline-block;
-         float: left;
-         position: relative;
-         @include Helvetica;
-
-         .menu-item-content {
-            height: 140px;
-            width: 150px;
-            display: block;
-            overflow: auto;
-            margin: auto;
-            position: absolute;
-            top: 0; left: 0; bottom: 0; right: 0;
-            color: $white;
-            .icon-1 {
-               width: 0;
-               border-bottom: 27px solid rgba(250,250,250,0.3);
-               border-left: 45px solid transparent;
-               border-right: 45px solid transparent;
-            }
-
-            .icon-2 {
-               width: 90px;
-               height: 43px;
-               background-color: rgba(250,250,250,0.3);
-               .helper {
-                   display: inline-block;
-                   height: 100%;
-                   vertical-align: middle;
-               }
-               img#protest-icon {
-                  vertical-align: middle;
-                  width: 52px;
-               }
-               i {
-                  line-height: 60px;
-                  font-size: 4em;
-                  color: rgba(250,250,250,0.7);
-               }
-
-            }
-            .icon-3 {
-
-            width: 0;
-            border-top: 27px solid rgba(250,250,250,0.3);
-            border-left: 45px solid transparent;
-            border-right: 45px solid transparent;
-            }
-
-            .icon {
-               height: 100px;
-               width: 100px;
-               margin: 10px auto;
-               border-radius: 50%;
-               background: url('dotted_background_92percent.png');
-
-               .helper {
-                   display: inline-block;
-                   height: 100%;
-                   vertical-align: middle;
-               }
-               img#protest-icon {
-                  vertical-align: middle;
-                  width: 64px;
-               }
-               i {
-                  line-height: 100px;
-                  font-size: 4em;
-                  color: rgba(250,250,250,0.7);
-               }
-            }
-               a:link.menu-item-text,
-               a:visited.menu-item-text,
-               a:hover.menu-item-text,
-               a:active.menu-item-text {
-                  font-weight: 400;
-                  text-shadow: 1px 0 0 #444;
-                  font-size: 1em;
-                  letter-spacing: 1px;
-                  color: $white;
-                  text-decoration: none;
-               }
-         }
-      }
-   }
 }
 #red-menu-item {
    background-color: #ff6666;
