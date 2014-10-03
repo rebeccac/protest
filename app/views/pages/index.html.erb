@@ -1,31 +1,5 @@
 <% provide(:title, 'Protest Australia') %>
 
-<div id="container-frontpage">
-	<header class="header-frontpage">
-		<h1 class="front-page">Protest Australia</h1>
-		<div class="top-menu">
-			<div class="button-small"><i class="fa fa-twitter"></i></div>
-			<div class="button-small"><i class="fa fa-facebook"></i></div>
-
-			<% if signed_in? %>
-					<%= link_to "My Protests", my_protests_path, class: "button" %> <%= link_to "Sign Out", destroy_user_session_path, :method => :delete, class: "button" %>
-			<% else %>
-					<%= link_to "Register", new_user_registration_path, :method => :get, class: "button" %> <%= link_to "Sign In", new_user_session_path, :method => :get, class: "button" %>
-			<% end %>
-
-			<div class="button-small menu-top-right" id="menu-icon"><i class="fa fa-bars"></i>
-
-				<ul class="dropdown-menu" id="dropdown-menu">
-					<li class="dropdown-menu-item"><%= link_to "Protests", protests_path %></li>
-					<li class="dropdown-menu-item"><%= link_to "Add a Protest", new_path %></li>
-					<li class="dropdown-menu-item"><%= link_to "My Protests", my_protests_path %></li>
-					<li class="dropdown-menu-item"><%= link_to "Related Sites", related_sites_path %></li>
-					<li class="dropdown-menu-item"><%= link_to "About Us", about_us_path %></li>
-					<li class="dropdown-menu-item"><%= link_to "Contact Us", contact_us_path %></li>
-				</ul><!-- dropdown-menu -->
-			</div><!-- id:menu-icon -->
-
-</header>
 <nav class="nav-buttons">
 	<div class="nav-item">
 		<div class="menu-item-content">

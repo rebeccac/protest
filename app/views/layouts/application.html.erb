@@ -12,54 +12,39 @@
   </head>
 
   <body>
-	<header class="header">
-      <div id="menu">
-   		<nav>
-   			<ul>
-   				<li id="yellow">
-   					<%= link_to "HOME", root_path %>
-   				</li>
-   				<li id="pale_blue">
-                  <%= link_to "PROTESTS", protests_path %>
-               </li>
-   				<li id="orange">
-                  <%= link_to "ADD A PROTEST", new_path %>
-   				</li>
-   				<li id="dark_blue">
-   						<%= link_to "RELATED SITES", related_sites_path %>
-   					</li>
+     <div id="container">
+         <header class="header">
+            <h1 class="top_header">Protest Australia</h1>
+            <div class="top-menu">
+               <div class="button-small"><i class="fa fa-twitter"></i></div>
+               <div class="button-small"><i class="fa fa-facebook"></i></div>
+
                <% if signed_in? %>
-                  <li id="white">
-                     <%= link_to "MY PROTESTS", my_protests_path %>
-                  </li>
-   					<li id="green">
-   						<%= link_to "SIGN OUT", destroy_user_session_path, :method => :delete %>
-   					</li>
-   				<% else %>
-                  <li id="white">
-                     <%= link_to "SIGN UP", new_user_registration_path, :method => :get %>
-                  </li>
-   					<li id="green">
-   						<%= link_to "SIGN IN", new_user_session_path, :method => :get %>
-   					</li>
-   				<% end %>
-   			</ul>
-   		</nav>
-      </div>
-      <div id="title">
-         <h2 id="top-bar">Protest Australia</h2>
-      </div>
-      <div id="logo">
-         <%= image_tag("protest_sign_white.png", size: "60x60", alt: "Protest sign icon", id:"header-image") %>
-      </div>
-	</header>
-		<div id="container">
+                     <%= link_to "My Protests", my_protests_path, class: "button" %> <%= link_to "Sign Out", destroy_user_session_path, :method => :delete, class: "button" %>
+               <% else %>
+                     <%= link_to "Register", new_user_registration_path, :method => :get, class: "button" %> <%= link_to "Sign In", new_user_session_path, :method => :get, class: "button" %>
+               <% end %>
+
+               <div class="button-small menu-top-right" id="menu-icon"><i class="fa fa-bars"></i>
+
+                  <ul class="dropdown-menu" id="dropdown-menu">
+                     <li class="dropdown-menu-item"><%= link_to "Protests", protests_path %></li>
+                     <li class="dropdown-menu-item"><%= link_to "Add a Protest", new_path %></li>
+                     <li class="dropdown-menu-item"><%= link_to "My Protests", my_protests_path %></li>
+                     <li class="dropdown-menu-item"><%= link_to "Related Sites", related_sites_path %></li>
+                     <li class="dropdown-menu-item"><%= link_to "About Us", about_us_path %></li>
+                     <li class="dropdown-menu-item"><%= link_to "Contact Us", contact_us_path %></li>
+                  </ul><!-- dropdown-menu -->
+               </div><!-- id:menu-icon -->
+         </header>
 			<% flash.each do |key, value| %>
 				<div id="message"><p><%= value %></p></div>
 			<% end %>
+
+
 		    <%= yield %>
 		    <%= javascript_include_tag "application" %>
-		</div>
 
+		</div><!-- container -->
   </body>
 </html>
