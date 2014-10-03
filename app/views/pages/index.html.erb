@@ -29,7 +29,12 @@
 <nav class="nav-buttons">
 	<div class="nav-item">
 		<div class="menu-item-content">
-			<%= link_to protests_path do %><div class="icon"><span class="helper"></span><%= image_tag("protest_icon.png", alt: "Protest sign icon", id: "protest-icon") %></div><% end %>
+			<%= link_to protests_path do %>
+				<div class="icon">
+					<span class="helper"></span>
+					<img src="assets/protest_icon_yellow_64px.png" onmouseover="this.src='assets/protest_icon_64px.png'" onmouseout="this.src='assets/protest_icon_yellow_64px.png'" alt="Protests icon" id="protest-icon">
+				</div>
+			<% end %>
 			<%= link_to "Protests", protests_path, class: "nav-item-text" %>
 		</div>
 
@@ -70,4 +75,5 @@
 	<h2 class="front-page-title">Protest Australia</h2>
 </div><!-- main-content -->
 
+<%= render 'common/footer' %>
 </div>

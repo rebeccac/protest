@@ -1,11 +1,17 @@
 <li class="protest-front-page recent-protest-box">
-
-   <div class="state-box">
-      <%= recent.state %>
-   </div>
-   <div class="recent-protest-date">
-      <%= Date.parse(recent.date.to_s).strftime("%d %B %Y") %>
-   </div>
+   <div class="recent-protest-title"><%= link_to recent.title.truncate(25), recent %></div>
    <div class="clear"></div>
-   <div class="recent-protest-details"><%= recent.title %></div>
+   <div class="recent-protest-details-one">
+      <div class="state-box">
+         <%= recent.state %>
+      </div>
+      <div class="recent-protest-date">
+         <%= link_to Date.parse(recent.date.to_s).strftime("%d.%m.%Y"), recent %>
+      </div>
+   </div><!-- recent-protest-details-one -->
+   <div class="clear"></div>
+   <div class="recent-protest-details-two">
+      <p class="details">Starts: <%= Time.parse(recent.time.to_s).strftime("%H:%M") %></p>
+      <p class="details">Begins at: <%= recent.starting_location %></p>
+   </div>
 </li>

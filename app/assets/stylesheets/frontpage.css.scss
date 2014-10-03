@@ -48,6 +48,9 @@ body {
    clear: both;
 }
 
+p.white-text {
+   color: $white;
+}
 .main-content {
    position: absolute;
    top: 50px;
@@ -123,7 +126,7 @@ h2.front-page-title {
                color: $purple;
             }
             i.red {
-               color: $red;
+               color: #ff6666;
             }
             i.pale-blue {
                color: $pale_blue;
@@ -146,7 +149,7 @@ h2.front-page-title {
                color: $dark_grey;
                text-decoration: none;
             }
-      }
+         }
    }
 }
 
@@ -155,130 +158,102 @@ h2.front-page-title {
 /* ********** End of Buttons ********** */
 
 
-
-
-
 /* ********** Front Page Recent Protests ********** */
 
-   .recent-protests {
-      display: block;
-      width: 585px;
-      height: 390px;
-      margin: 0 auto;
+.recent-protests {
+   display: block;
+   width: 645px;
+   height: 430px;
+   margin: 0 auto;
+   position: relative;
+   top: 60px;
+   .recent-protests-heading {
+      @include Helvetica;
+      font-size: 1.1em;
+      margin-bottom: 8px;
+   }
+
+   .protest-front-page {
+      width: 200px;
+      height: 200px;
+      display: inline-block;
+      float: left;
       position: relative;
-      top: 60px;
-      .recent-protests-heading {
-         @include Helvetica;
-         font-size: 1.1em;
-         margin-bottom: 8px;
-      }
+      color: $white;
+      margin: 0 15px 15px 0;
+   }
 
-      .protest-front-page {
-         width: 180px;
-         height: 180px;
-         display: inline-block;
-         float: left;
-         position: relative;
+   .recent-protest-box:first-child {
+      background-color: #006699;
+   }
+   .recent-protest-box:nth-child(6) {
+      background-color: #006699;
+   }
+   .recent-protest-box:nth-child(2),
+   .recent-protest-box:nth-child(5) {
+      background-color: #3399cc;
+   }
+   .recent-protest-box:nth-child(3),
+   .recent-protest-box:nth-child(4) {
+      background-color: #3399ff;
+   }
+   .recent-protest-box {
+      @include Helvetica;
+      font-size: 0.9em;
+      a:link, a:visited, a:hover, a:active {
+          color: $white;
+          text-decoration: none;
+      }
+      .recent-protest-title {
+         position: absolute;
+         width: 100%;
+         height: 30px;
+         line-height: 30px;
+         font-size: 0.95em;
+      }
+      .recent-protest-title {
          color: $white;
-         margin: 0 15px 15px 0;
+         width: 100%;
+         padding: 10px 5px;
       }
-
-      .recent-protest-box:first-child {
-         background-color: #006699;
-      }
-      .recent-protest-box:nth-child(6) {
-         background-color: #006699;
-      }
-      .recent-protest-box:nth-child(2),
-      .recent-protest-box:nth-child(5) {
-         background-color: #3399cc;
-      }
-      .recent-protest-box:nth-child(3),
-      .recent-protest-box:nth-child(4) {
-         background-color: #3399ff;
-      }
-      .recent-protest-box {
-         text-align: center;
-         @include Helvetica;
-         font-size: 0.9em;
+      .recent-protest-details-one {
+         width: 100%;
+         height: 50px;
+         position: relative;
+         top: 40px;
+         background-color: rgba(251,251,251,0.2);
          .recent-protest-date {
             position: absolute;
-            top: 10px; left: 60px;
+            top:15px;   left: 60px;
             color: $white;
+            font-size: 1.5em;
          }
-         .recent-protest-details {
-            position: absolute;
-            left: 20px;
-            color: $white;
-            margin-top: 15px;
-            font-size: 0.9em;
-         }
-
          .state-box {
             position: relative;
-            top: 10px;
-            left: 10px;
+            top: 5px;
+            left: 5px;
             width: 40px;
             height: 40px;
             line-height: 40px;
             border-radius: 50%;
             @include Helvetica;
             color: #333;
-            font-size: 1em;
+            font-size: 0.9em;
             text-align: center;
             text-transform: uppercase;
-            background-color: rgba(251,251,251,0.5);
+            background-color: rgba(251,251,251,0.8);
          }
-
-
-         .act {
-            background-color: $orange;
-         }
-         .nsw {
-            background-color: lighten($dark_blue, 20%);
-         }
-         .nt {
-            background-color: $maroon;
-         }
-         .qld {
-            background-color: $red;
-         }
-         .sa {
-            background-color: $green;
-         }
-         .tas {
-            background-color: $pale_blue;
-         }
-         .vic {
-            background-color: $yellow;
-         }
-         .wa {
-            background-color: $purple;
-         }
-
       }
-}
-#red-menu-item {
-   background-color: #ff6666;
-   content: "";
-}
-#orange-menu-item {
-   background-color: #ff9966;
-   content: "";
-}
-#yellow-menu-item {
-   background-color: #ffcc66;
-   content: "";
-}
-#green-menu-item {
-   background-color: #66cc99;
-   content: "";
-}
-#blue-menu-item {
-   background-color: #448ccb;
-   content: "";
-}
-#purple-menu-item {
-   background-color: #6666cc;
-   content: "";
+      .recent-protest-details-two {
+         width: 100%;
+         height: 90px;
+         position: absolute;
+         top: 100px;
+         background-color: rgba(251,251,251,0.1);
+         p.details {
+            padding-left: 5px;
+            color: #f2f2eb !important;
+         }
+      }
+   }
 }

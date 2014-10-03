@@ -362,7 +362,7 @@ header.header-frontpage {
                background: url('dotted_background_92percent.png');
                border-bottom: 1px solid rgba(251,251,251,0.2);
                position: relative;
-               border-left: 4px solid transparent;
+               border-left: 5px solid transparent;
                a:link, a:visited, a:hover, a:active {
                   color: $white;
                   @include Helvetica;
@@ -371,7 +371,7 @@ header.header-frontpage {
                }
             }
             .dropdown-menu-item:hover {
-               border-left: 4px solid #1f7a7a;
+               border-left: 5px solid #1f7a7a;
             }
             .dropdown-menu-item:last-child {
                border-bottom: 0;
@@ -379,4 +379,16 @@ header.header-frontpage {
          }
       }
    }
+}
+
+footer.footer {
+   width: 100%;
+   position: absolute;
+   bottom: 0;
+   height: 50px;
+   line-height: 50px;
+   text-align: center;
+   @include Helvetica;
+   font-size: 0.8em;
+   color: $dark_grey;
 }
