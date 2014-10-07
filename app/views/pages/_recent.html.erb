@@ -12,6 +12,6 @@
    <div class="clear"></div>
    <div class="recent-protest-details-two">
       <p class="details">Starts: <%= Time.parse(recent.time.to_s).strftime("%H:%M") %></p>
-      <p class="details">Begins at: <%= recent.starting_location %></p>
+      <p class="details">Begins at: <%= recent.starting_location.truncate(30) %></p>
    </div>
 </li>

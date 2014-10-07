@@ -39,7 +39,7 @@
 		<div class="recent-protests-heading">Recently added protests</div>
 		<% if @recent_protests.any? %>
 		<ul>
-			<%= render partial: "recent", collection: @recent_protests %>
+			<%= render partial: "recent", collection: @recent_protests.reverse %>
 		</ul>
 		<% else %>
 			<p>There are no protests available</p>

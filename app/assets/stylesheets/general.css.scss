@@ -29,7 +29,13 @@ body {
    min-height: 100%;
    width: 100%;
 }
-
+.content {
+   position: absolute;
+   top: 50px;
+   width: 100%;
+   height: auto;
+   overflow:scroll;
+}
 #container {
    top: 0;
    width: 100%;
@@ -312,6 +318,9 @@ header.header {
    background-color: $dark_grey;
    border-bottom: 0;
    box-shadow: 0 0 0 0;
+   a:link, a:visited, a:hover, a:active {
+      color: $white;
+   }
    .top-menu {
       position: absolute;
       top: 10px;

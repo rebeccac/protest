@@ -45,7 +45,9 @@
                </ul>
                <%= f.input :more_info, placeholder: 'More info...', input_html: { tabindex: "11" } %>
          </fieldset>
-         <%= f.input :visible %>
+         <% if current_user.try(:admin?) %>
+            <%= f.input :visible %>
+         <% end %>
       </div>
    </div>
    <div class="row buttons">

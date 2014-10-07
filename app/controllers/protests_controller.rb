@@ -34,23 +34,37 @@ def my_protests
 end
 
 def edit
-   #Ensure user can only edit his/her own protests by getting current user's protests and finding the correct protest id - if user doesn't have a protest with that id, won't be able to edit.
-   @protest = current_user.protests.find(params[:id])
+   if current_user.try(:admin?)
+      @protest = Protest.find(params[:id]) #if current user is an admin, can edit any record
+   else
+      #Ensure user can only edit his/her own protests by getting current user's protests and finding the correct protest id - if user doesn't have a protest with that id, won't be able to edit.
+      @protest = current_user.protests.find(params[:id])
+   end
+
 end
 
 def update
+   if current_user.try(:admin?)
+      @protest = Protest.find(params[:id]) #if current user is an admin, can edit any record
+   else
     #Ensure user can only edit his/her own protestss by getting current user's protests and finding the correct protest id - if user doesn't have a protest with that id, won't be able to edit.
     @protest = current_user.protests.find(params[:id])
+   end
     if @protest.update_attributes(params[:protest].permit(:title, :date, :time, :starting_location, :state, :email, :organisation, :more_info, :website, :twitter, :facebook, :visible, :march_route)) # attempt to update question object's attributes with values submitted through form - must permit every attribute you want users to be able to update.
       flash[:success] = "Your protest has been updated."
       redirect_to @protest # redirect to updated protest
     else
       render 'edit' # if unsuccessful, render edit page again
     end
+
 end
 
 def destroy
-   @protest = current_user.protests.find(params[:id])
+   if current_user.try(:admin?)
+      @protest = Protest.find(params[:id]) #if current user is an admin, can delete any record
+   else
+      @protest = current_user.protests.find(params[:id])
+   end
    @protest.destroy
    redirect_to action: :index
 end

@@ -14,12 +14,15 @@
   <body>
      <div id="container">
          <header class="header">
-            <h1 class="top_header">Protest Australia</h1>
+            <h1 class="top_header"><%= link_to "Protest Australia", root_path %></h1>
             <div class="top-menu">
                <div class="button-small"><i class="fa fa-twitter"></i></div>
                <div class="button-small"><i class="fa fa-facebook"></i></div>
-
+               <% if current_user.try(:admin?) %>
+                  <div class="button-small">Admin:</div>
+               <% end %>
                <% if signed_in? %>
+                     <div class="button"><%= current_user.email %></div>
                      <%= link_to "My Protests", my_protests_path, class: "button" %> <%= link_to "Sign Out", destroy_user_session_path, :method => :delete, class: "button" %>
                <% else %>
                      <%= link_to "Register", new_user_registration_path, :method => :get, class: "button" %> <%= link_to "Sign In", new_user_session_path, :method => :get, class: "button" %>
@@ -37,14 +40,13 @@
                   </ul><!-- dropdown-menu -->
                </div><!-- id:menu-icon -->
          </header>
-			<% flash.each do |key, value| %>
-				<div id="message"><p><%= value %></p></div>
-			<% end %>
+   			<% flash.each do |key, value| %>
+   				<div id="message"><p><%= value %></p></div>
+   			<% end %>
 
 
-		    <%= yield %>
-		    <%= javascript_include_tag "application" %>
-
+   		    <%= yield %>
+   		    <%= javascript_include_tag "application" %>
 		</div><!-- container -->
   </body>
 </html>
