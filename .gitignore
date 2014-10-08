@@ -19,3 +19,5 @@
 .DS_Store
 /app/views/protests/test.html.erb
 /app/assets/images/extra_images/design2.psd
+/app/assets/stylesheets/protests2.css.scss2
+/app/views/protests/_protest2.html.erb

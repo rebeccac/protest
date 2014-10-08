@@ -1,34 +1,24 @@
 <li class="protest">
 	<div class="row">
 		<div class="large-12 columns">
-			<div class="<%= protest.state.downcase %> state">
-				<%= protest.state %>
-			</div>
-			<span class="date-heading"><%= Date.parse(protest.date.to_s).strftime("%d %b %Y") %></span>
-			<div class="pole"></div>
+			<div class="info-1">
+				<div class="circle <%= protest.state.downcase %>"><%= protest.state %></div>
+				<h3 class="protest-heading"><%= link_to truncate(protest.title, length: 130), protest %></h3>
+			</div><!-- info-1 -->
 		</div>
+	</div><!-- row -->
+	<div class="row">
+		<div class="large-12 columns">
+			<div class="info-2">
 
+			</div><!-- info-2 -->
+		</div><!-- large-12 cols -->
+	</div><!-- row -->
+	<div class="row">
 		<div class="large-12 columns">
-			<h3 class="protest-heading"><%= link_to truncate(protest.title, length: 130), protest %></h3>
-		</div>
-		<div class="large-12 columns">
-			<p><%= Time.parse(protest.time.to_s).strftime("%H:%M") %> </p>
-		</div>
-		<div class="large-12 columns">
-			<p><%= Date.parse(protest.date.to_s).strftime("%A %e %B %Y") %></p>
-		</div>
-		<div class="large-12 columns">
-			<p><%= protest.starting_location %></p>
-		</div>
-		<div class="large-12 columns">
-			<p> <%= link_to 'more info', protest %> </p>
-		</div>
-		<div class="large-12 columns">
-			<% if on_my_protests_page? %>
-         	<!-- Call on_my_protests_page? helper method in protests_helper.rb - checks if user is on my_protests page. If so, display Edit button. Otherwise (if on main Protests page), don't. -->
-         		<p><i class="fa fa-pencil med-icon dark-grey-text"></i><%= link_to "Edit", edit_protest_path(protest), class: "red-text" %></p>
-					<p><i class="fa fa-times med-icon red-text"></i><%= link_to "Delete",  protest,  method: :delete, data: { confirm: 'Are you sure?' } %></p>
-         	<% end %>
-		</div>
+			<div class="info-3">
+				test
+			</div><!-- info-3 -->
+		</div><!-- large-12 cols -->
 	</div><!-- row -->
 </li>

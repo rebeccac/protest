@@ -40,7 +40,7 @@ html{
 }
 body {
    margin: 0;
-   height: 100%;
+   min-height: 100%;
    width: 100%;
 }
 
@@ -51,9 +51,9 @@ body {
 p.white-text {
    color: $white;
 }
-.main-content {
+.main-content { /* right-hand panel on front page (recent protests) */
    position: absolute;
-   top: 50px;
+   top: 0;
    left: 150px;
    width: calc(100% - 150px);
    height: auto;
@@ -64,7 +64,7 @@ h2.front-page-title {
    color: $dark_grey;
    text-align: center;
    position: relative;
-   top: 100px;
+   top: 70px;
    letter-spacing: 2px;
 }
 
@@ -72,8 +72,9 @@ h2.front-page-title {
 
 .nav-buttons {
    width: 150px;
-   position: absolute;
-   margin-top: 100px;
+   // position: absolute;
+   float: left;
+   margin-top: 20px;
 
    .nav-item {
       width: 150px;
@@ -166,7 +167,7 @@ h2.front-page-title {
    height: 430px;
    margin: 0 auto;
    position: relative;
-   top: 60px;
+   top: 40px;
    .recent-protests-heading {
       @include Helvetica;
       font-size: 1.1em;

@@ -27,40 +27,20 @@ $med_grey: #a2a2a2;
 $pale_grey: #cccccc;
 $charcoal: #282828;
 
-
-.state {
-   width: 90px;
-   height: 45px;
-   @include Helvetica;
-   font-size: 2.2em;
-   color: #f2f2eb;
-   line-height: 45px;
-   text-align: center;
-   display: inline-block;
-}
-.pole {
-   display: block;
-   margin: 0 43px;
-   width: 4px;
-   height: 30px;
-   background-color: $dark_grey;
-   content: ""
-}
-
 .act {
-   background-color: $orange;
+   background-color: #f2594b;
 }
 .nsw {
-   background-color: lighten($dark_blue, 20%);
+   background-color: #f27d52;
 }
 .nt {
-   background-color: $maroon;
+   background-color: #ccba60;
 }
 .qld {
-   background-color: $red;
+   background-color: #809142;
 }
 .sa {
-   background-color: $green;
+   background-color: #4b7ba6;
 }
 .tas {
    background-color: $pale_blue;
@@ -76,7 +56,6 @@ ul#protest_list {
 	width: 90%;
 	margin: 0 auto;
 	li {
-	   background-color: #fff;
 		margin: 20px 0;
 		padding: 10px 0;
 	}
