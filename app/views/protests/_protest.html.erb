@@ -1,24 +1,41 @@
 <li class="protest">
+
 	<div class="row">
 		<div class="large-12 columns">
 			<div class="info-1">
 				<div class="circle <%= protest.state.downcase %>"><%= protest.state %></div>
 				<h3 class="protest-heading"><%= link_to truncate(protest.title, length: 130), protest %></h3>
-			</div><!-- info-1 -->
+			</div>
 		</div>
-	</div><!-- row -->
+	</div>
+
 	<div class="row">
 		<div class="large-12 columns">
 			<div class="info-2">
+				<span><%= Time.parse(protest.time.to_s).strftime("%l:%M %P") %>, <%= Date.parse(protest.date.to_s).strftime("%a %d %B %Y") %></span>
 
-			</div><!-- info-2 -->
-		</div><!-- large-12 cols -->
-	</div><!-- row -->
+			</div>
+		</div>
+	</div>
+
 	<div class="row">
 		<div class="large-12 columns">
 			<div class="info-3">
-				test
-			</div><!-- info-3 -->
-		</div><!-- large-12 cols -->
-	</div><!-- row -->
+				<span class="highlight">Starting location:</span> <%= truncate(protest.starting_location, length: 70) %>
+				<br><br>
+				<span class="highlight">More info:</span> <% if protest.more_info? %><%= truncate(protest.more_info, length: 90) %><% else %>NA<% end %>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="large-12 columns">
+			<% if on_my_protests_page? || current_user.try(:admin?) %>
+				<!-- Call on_my_protests_page? helper method in protests_helper.rb - checks if user is on my_protests page. If so, display Edit & Delete buttons.
+				Or, if logged-in user is Admin, show Edit & Delete buttons. Otherwise (if on main Protests page & not Admin), don't. -->
+					<p class="inline_block"><i class="fa fa-pencil med-icon dark-grey-text"></i><%= link_to "Edit", edit_protest_path(protest), class: "red-text" %></p>
+					<p class="inline_block"><i class="fa fa-times med-icon red-text"></i><%= link_to "Delete",  protest,  method: :delete, data: { confirm: 'Are you sure you want to delete this protest?' } %></p>
+				<% end %>
+		</div>
+	</div>
 </li>

@@ -84,6 +84,9 @@ body {
      }
    }
 
+.inline_block {
+   display: inline-block;
+}
 .strong {
     font-weight: bold;
  }
@@ -124,15 +127,15 @@ body {
  h3.protest-heading {
  	@include OpenSans;
  	font-size: 1.3em;
-   text-shadow: 1px 1px $med_grey;
- 	color: $white;
+   // text-shadow: 1px 1px $med_grey;
+ 	color: $charcoal;
  	font-weight: 300;
  	margin: 0;
    display: inline-block;
    margin-left: 75px;
    a:link, a:visited, a:hover, a:active {
       padding-top: 10px;
-      color: $white;
+      color: $charcoal;
    }
  }
 

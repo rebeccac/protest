@@ -25,32 +25,35 @@ $pale_grey: #cccccc;
 $charcoal: #282828;
 
 @media (min-width: 1024px) {
-   .protest:first-child {
-      background-color: #006699;
-   }
-   .protest:nth-child(6),
-   .protest:nth-child(7),
-   .protest:nth-child(12) {
-      background-color: #006699;
-   }
-   .protest:nth-child(2),
-   .protest:nth-child(5),
-   .protest:nth-child(8),
-   .protest:nth-child(11) {
-      background-color: #3399cc;
-   }
-   .protest:nth-child(3),
-   .protest:nth-child(4),
-   .protest:nth-child(9),
-   .protest:nth-child(10) {
-      background-color: #3399ff;
-   }
+   // .protest:first-child {
+   //    background-color: lighten(#006699, 5%);
+   // }
+   // .protest:nth-child(6),
+   // .protest:nth-child(7),
+   // .protest:nth-child(12) {
+   //    background-color: lighten(#006699, 5%);
+   // }
+   // .protest:nth-child(2),
+   // .protest:nth-child(5),
+   // .protest:nth-child(8),
+   // .protest:nth-child(11) {
+   //    background-color: #3399cc;
+   // }
+   // .protest:nth-child(3),
+   // .protest:nth-child(4),
+   // .protest:nth-child(9),
+   // .protest:nth-child(10) {
+   //    background-color: #3399ff;
+   // }
    .protest {
+      border: 3px solid #444;
+      border-radius: 30px;
       display: inline-block;
       color: #f2f2eb;
       width: 32.5%;
       height: auto;
-      min-height: 390px;
+      min-height: 320px;
+      background-color: $white;
       .columns {
          padding: 0;
          margin: 0;
@@ -71,10 +74,19 @@ $charcoal: #282828;
          width: 100%;
          display: block;
          @include Helvetica;
-         color: #f2f2eb;
+         color: $white;
+         .highlight {
+            color: $charcoal;
+            font-weight: 200;
+            text-decoration: underline;
+         }
+      }
+      .info-2, .info-3 {
+         color: $charcoal;
       }
       .info-1 {
-         background-color: rgba(251,251,251,0.45);
+         // background-color: rgba(251,251,251,0.45);
+         background-color: rgba(51,51,51,0.45);
          height: 45px;
          font-size: 1em;
          line-height: 45px;
@@ -83,21 +95,21 @@ $charcoal: #282828;
          margin-bottom: 10px;
       }
       .info-2 {
-         background-color: rgba(251,251,251,0.3);
-         height: 80px;
+         // background-color: rgba(251,251,251,0.3);
+         background-color: rgba(51,51,51,0.3);
+         height: 40px;
+         line-height: 40px;
          margin-bottom: 10px;
+         font-size: 1.3em;
+         padding: 0 10px;
       }
       .info-3 {
-         background-color: rgba(251,251,251,0.1);
-         height: 140px;
+         // background-color: rgba(251,251,251,0.1);
+         background-color: rgba(51,51,51,0.1);
+         height: 130px;
+         font-size: 1.2em;
+         padding: 5px 10px;
       }
-   }
-   .date-heading {
-      @include OpenSans;
-      font-size: 1.7em;
-      color: #444;
-      font-weight: 400;
-      padding-left: 15px;
    }
 }
 
