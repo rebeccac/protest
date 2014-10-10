@@ -4,7 +4,7 @@
 		<div class="large-12 columns">
 			<div class="info-1">
 				<div class="circle <%= protest.state.downcase %>"><%= protest.state %></div>
-				<h3 class="protest-heading"><%= link_to truncate(protest.title, length: 130), protest %></h3>
+				<h3 class="protest-heading"><%= link_to truncate(protest.title, length: 25), protest %></h3>
 			</div>
 		</div>
 	</div>
@@ -12,7 +12,7 @@
 	<div class="row">
 		<div class="large-12 columns">
 			<div class="info-2">
-				<span><%= Time.parse(protest.time.to_s).strftime("%l:%M %P") %>, <%= Date.parse(protest.date.to_s).strftime("%a %d %B %Y") %></span>
+				<span><%= Time.parse(protest.time.to_s).strftime("%l:%M%P") %>, <%= Date.parse(protest.date.to_s).strftime("%a %d %B %Y") %></span>
 
 			</div>
 		</div>
@@ -25,6 +25,12 @@
 				<br><br>
 				<span class="highlight">More info:</span> <% if protest.more_info? %><%= truncate(protest.more_info, length: 90) %><% else %>NA<% end %>
 			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="large-12 columns">
+			 <div class="details_button"><%= link_to 'View details', protest %></div>
 		</div>
 	</div>
 

@@ -126,13 +126,12 @@ body {
 
  h3.protest-heading {
  	@include OpenSans;
- 	font-size: 1.3em;
-   // text-shadow: 1px 1px $med_grey;
+ 	font-size: 1.1em;
  	color: $charcoal;
  	font-weight: 300;
  	margin: 0;
    display: inline-block;
-   margin-left: 75px;
+   margin-left: 60px;
    a:link, a:visited, a:hover, a:active {
       padding-top: 10px;
       color: $charcoal;
