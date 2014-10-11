@@ -20,8 +20,7 @@
                <div class="button-small"><i class="fa fa-twitter"></i></div>
                <div class="button-small"><i class="fa fa-facebook"></i></div>
                <% if current_user.try(:admin?) %>
-                  <!-- <div class="button-small">Admin:</div> -->
-                  <div class="admin-button">Admin:</div>
+                  <div class="admin-button"><%= link_to "Admin", admin_path %></div>
                <% end %>
                <% if signed_in? %>
                      <div class="button"><%= current_user.email %></div>

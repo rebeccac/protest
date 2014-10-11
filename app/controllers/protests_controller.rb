@@ -2,8 +2,12 @@ class ProtestsController < ApplicationController
 
    before_filter :auth, only: [:create, :my_protests, :edit, :update, :destroy]
 
+
+
   def index
   	  @protests = Protest.visible(params)
+     @protests = Protest.state(params) if params[:state]  #call state method in model - queries DB for records where state = state param (if state param is passed)
+     @protests = Protest.hidden(params) if params[:visible] && current_user.try(:admin?)
   end
 
   def new
@@ -26,7 +30,7 @@ class ProtestsController < ApplicationController
   end
 
   def show
-    @protest = Protest.find(params[:id]) #find Question record with ID passed as param
+    @protest = Protest.find(params[:id]) #find Protest record with ID passed as param
   end
 
 def my_protests

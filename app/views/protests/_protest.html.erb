@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="large-12 columns">
 			<div class="info-1">
-				<div class="circle <%= protest.state.downcase %>"><%= protest.state %></div>
+				<div class="circle <%= protest.state.downcase %>"><%= link_to protest.state, protests_path(state: protest.state)  %></div>
 				<h3 class="protest-heading"><%= link_to truncate(protest.title, length: 25), protest %></h3>
 			</div>
 		</div>

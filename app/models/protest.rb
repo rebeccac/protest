@@ -11,7 +11,15 @@ class Protest < ActiveRecord::Base
 
 	def self.visible(params)
   		#return protests where visible attribute = true
-  		# paginate, using will_paginate gem - 10 protests per page
+  		# paginate, using will_paginate gem - 12 protests per page
   		where(visible: true).paginate(page: params[:page], order: 'created_at DESC', per_page: 12)
   	end
+   def self.state(params)
+      #return protests where visible attribute = true AND state attribute = state param passed by user
+      #paginate, using will_paginate gem - 12 protests per page
+      where(visible: true).where("state = ?", params[:state]).paginate(page: params[:page], order: 'created_at DESC', per_page: 12)
+   end
+   def self.hidden(params)
+      where(visible: false).paginate(page: params[:page], order: 'created_at DESC', per_page: 12)
+   end
 end

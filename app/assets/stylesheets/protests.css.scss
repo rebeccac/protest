@@ -98,6 +98,9 @@ ul#protest_list {
       margin: 0 7px;
       padding: 0;
       display: inline-block;
+      a:link, a:visited, a:hover, a:active {
+         color: $white;
+      }
    }
    .info-1, .info-2, .info-3 {
       width: 100%;

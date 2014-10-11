@@ -7,11 +7,15 @@ Protestaustralia::Application.routes.draw do
   resources :protests
 
   match '/protests', to: 'protests#index', via: [:get]
+  match '/protests/state', to: 'protests#state', via: [:get]
+  match '/protests/hidden', to: 'protests#hidden', via: [:get]
   match '/new', to: 'protests#new', via: [:get]
   match '/my_protests', to: 'protests#my_protests', via: [:get]
   match '/related_sites', to: 'pages#related_sites', via: [:get]
   match '/about_us', to: 'pages#about_us', via: [:get]
   match '/contact_us', to: 'pages#contact_us', via: [:get]
+  match '/admin', to: 'pages#admin', via: [:get]
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
