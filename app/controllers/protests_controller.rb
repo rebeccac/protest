@@ -6,8 +6,13 @@ class ProtestsController < ApplicationController
 
   def index
   	  @protests = Protest.visible(params)
+     @heading = "All Protests"
+
      @protests = Protest.state(params) if params[:state]  #call state method in model - queries DB for records where state = state param (if state param is passed)
+     @heading = "#{params[:state]} Protests" if params[:state]
+
      @protests = Protest.hidden(params) if params[:visible] && current_user.try(:admin?)
+     @heading = "Hidden Protests" if params[:visible] && current_user.try(:admin?)
   end
 
   def new
