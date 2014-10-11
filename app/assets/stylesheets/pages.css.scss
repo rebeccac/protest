@@ -144,3 +144,23 @@ header {
  .screenshot {
  	max-width: 480px;
  }
+
+
+
+.admin-control-panel {
+   width: 100%;
+   margin: 50px 30px;
+   display: block;
+   a:link, a:visited, a:hover, a:active {
+      color: $dark_grey;
+      text-decoration: none;
+      font-size: 1.5em;
+      @include Helvetica;
+      font-weight: 200;
+   }
+   i {
+      font-size: 1.5em;
+      color: $red;
+   }
+
+}

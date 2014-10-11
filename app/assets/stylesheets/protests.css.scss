@@ -131,6 +131,19 @@ ul#protest_list {
    }
 }
 
+
+#protest_form {
+   form {
+      input[type=checkbox] {
+         display: inline-block;
+         & + label {
+            display: inline-block;
+         }
+      }
+   }
+}
+
+
 @media all and (max-width: 320px) {
 	#protest_form {
 		form {

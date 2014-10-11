@@ -46,7 +46,11 @@
                <%= f.input :more_info, placeholder: 'More info...', input_html: { tabindex: "11" } %>
          </fieldset>
          <% if current_user.try(:admin?) %>
-            <%= f.input :visible %>
+
+
+
+            <%= f.input :visible, label: "Show this protest" %>
+
          <% end %>
       </div>
    </div>
