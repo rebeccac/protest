@@ -8,7 +8,8 @@ class ProtestsController < ApplicationController
   	  @protests = Protest.visible(params)
      @heading = "All Protests"
 
-     @protests = Protest.state(params) if params[:state]  #call state method in model - queries DB for records where state = state param (if state param is passed)
+     @protests = Protest.state(params) if params[:state]  #call state method in model - queries DB for records where
+     #state = state param (if state param is passed)
      @heading = "#{params[:state]} Protests" if params[:state]
 
      @protests = Protest.hidden(params) if params[:visible] && current_user.try(:admin?)
@@ -47,7 +48,8 @@ def edit
    if current_user.try(:admin?)
       @protest = Protest.find(params[:id]) #if current user is an admin, can edit any record
    else
-      #Ensure user can only edit his/her own protests by getting current user's protests and finding the correct protest id - if user doesn't have a protest with that id, won't be able to edit.
+      #Ensure user can only edit his/her own protests by getting current user's protests and finding the correct
+      #protest id - if user doesn't have a protest with that id, won't be able to edit.
       @protest = current_user.protests.find(params[:id])
    end
 
@@ -57,10 +59,13 @@ def update
    if current_user.try(:admin?)
       @protest = Protest.find(params[:id]) #if current user is an admin, can edit any record
    else
-    #Ensure user can only edit his/her own protestss by getting current user's protests and finding the correct protest id - if user doesn't have a protest with that id, won't be able to edit.
+    #Ensure user can only edit his/her own protestss by getting current user's protests and finding the correct
+    #protest id - if user doesn't have a protest with that id, won't be able to edit.
     @protest = current_user.protests.find(params[:id])
    end
-    if @protest.update_attributes(params[:protest].permit(:title, :date, :time, :starting_location, :state, :email, :organisation, :more_info, :website, :twitter, :facebook, :visible, :march_route)) # attempt to update question object's attributes with values submitted through form - must permit every attribute you want users to be able to update.
+    if @protest.update_attributes(params[:protest].permit(:title, :date, :time, :starting_location, :state, :email,
+      :organisation, :more_info, :website, :twitter, :facebook, :visible, :march_route)) # attempt to update question
+      #object's attributes with values submitted through form - must permit every attribute you want users to be able to update.
       flash[:success] = "Your protest has been updated."
       redirect_to @protest # redirect to updated protest
     else
@@ -82,6 +87,7 @@ end
   private
   #In Rails 4, needed parameters must be marked as required
   def protest_params
-    params.require(:protest).permit(:title, :date, :time, :starting_location, :state, :email, :organisation, :more_info, :website, :twitter, :facebook, :visible, :march_route)
+    params.require(:protest).permit(:title, :date, :time, :starting_location, :state, :email, :organisation,
+    :more_info, :website, :twitter, :facebook, :visible, :march_route)
   end
 end

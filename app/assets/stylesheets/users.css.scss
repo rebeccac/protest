@@ -40,3 +40,16 @@ $charcoal: #282828;
    margin: 7px auto;
    @include Helvetica;
 }
+
+/* show.html */
+.user-data {
+   width: 96%;
+   margin: 0 auto;
+   @include Helvetica;
+   ul {
+      li {
+         list-style: none;
+         padding: 5px 0;
+      }
+   }
+}

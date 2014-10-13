@@ -1,2 +1,20 @@
 <%= provide(:title, "User: #{@user.email} | ProtestAustralia") %>
 <h1>User: <%= @user.email %></h1>
+
+<div class="user-data">
+   <ul>
+      <li><span class="strong">User ID:</span> <%= @user.id %></li>
+      <li><span class="strong">Email address:</span> <%= @user.email %></li>
+      <li><span class="strong">Created at:</span> <%= Date.parse(@user.created_at.to_s).strftime("%A %e %B %Y") %>, <%= Time.parse(@user.created_at.to_s).strftime("%H:%M") %> UTC</li>
+      <li><span class="strong">Confirmed at:</span> <%= Date.parse(@user.confirmed_at.to_s).strftime("%A %e %B %Y") %>, <%= Time.parse(@user.confirmed_at.to_s).strftime("%H:%M") %> UTC</li>
+      <li><span class="strong">Sign in count:</span> <%= @user.sign_in_count %></li>
+      <li><span class="strong">Current sign in:</span> <%= Date.parse(@user.current_sign_in_at.to_s).strftime("%A %e %B %Y") %>, <%= Time.parse(@user.current_sign_in_at.to_s).strftime("%H:%M") %> UTC</li>
+      <li><span class="strong">Last sign in:</span> <%= Date.parse(@user.last_sign_in_at.to_s).strftime("%A %e %B %Y") %>, <%= Time.parse(@user.last_sign_in_at.to_s).strftime("%H:%M") %> UTC</li>
+      <li><span class="strong">Current IP:</span> <%= @user.current_sign_in_ip %></li>
+      <li><span class="strong">Last IP:</span> <%= @user.last_sign_in_ip %></li>
+      <li><span class="strong">Admin:</span> <%= @user.admin %></li>
+   </ul>
+
+   <p class="inline_block"><i class="fa fa-times med-icon red-text"></i><%= link_to "Delete this user",  @user,  method: :delete, data: { confirm: 'Are you sure you want to delete this user?' } %></p>
+   <p class="inline_block"><i class="fa fa-pencil med-icon"></i><%= link_to "Edit",  edit_user_path(@user) %></p>
+</div>

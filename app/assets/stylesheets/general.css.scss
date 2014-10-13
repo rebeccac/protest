@@ -117,6 +117,13 @@ body {
       a:hover   { color: $red; }  /* user hovers     */
       a:active  { color: $red; }  /* active links    */
 }
+.yellow-text {
+   color: $yellow;
+      &:link    { color: $yellow; }  /* unvisited links */
+      &:visited { color: $dark_grey; }  /* visited links   */
+      a:hover   { color: $yellow; }  /* user hovers     */
+      a:active  { color: $yellow; }  /* active links    */
+}
 
  h3.subheading {
  	@include OpenSans;

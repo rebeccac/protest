@@ -1,17 +1,16 @@
 <%= provide(:title, "#{@protest.title} | ProtestAustralia") %>
 <h1><%= @protest.title %></h1>
 
-
 <div class="row">
-	<div class="large-12 columns">
-		<div class="box grey-background">
-			<h2>Admin:</h2>
-			<% if current_user.try(:admin?) %>
+	<% if current_user.try(:admin?) %>
+		<div class="large-12 columns">
+			<div class="box grey-background">
+				<h2>Admin:</h2>
 				<p>User ID: <%= @user.id %></p>
 				<p>Username: <%= @user.email %></p>
-			<% end %>
+			</div>
 		</div>
-	</div>
+	<% end %>
 
 	<div class="large-6 columns">
 		<div class="box grey-background">

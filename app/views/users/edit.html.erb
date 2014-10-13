@@ -1,0 +1,26 @@
+<% provide(:title, 'Edit a User | Protest Australia') %>
+   <h1><%= @user.email %> | Edit</h1>
+
+   <div class = "user-data">
+      <%= simple_form_for(@user) do |f| %>
+         <%= render 'common/form_errors', object: @user %>
+      <div class="large-6 columns">
+         <fieldset class="fieldset">
+            <legend class="legend">User Details</legend>
+               <%= f.input :email, placeholder: "User's email address", input_html: { class: "textfield", tabindex: "1" } %>
+         </fieldset>
+         <fieldset class="fieldset">
+            <%= f.input :admin, label: "Make this user an admin" %>
+         </fieldset>
+
+         <div class="row buttons">
+            <div class="12-large columns">
+               <div class="centered-contents">
+                  <%= f.submit %>  <%=f.button :button, 'Reset', :type => 'reset' %>
+               </div>
+
+            </div>
+         </div>
+         <% end %>
+      </div>
+   </div>

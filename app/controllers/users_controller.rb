@@ -7,8 +7,27 @@ class UsersController < ApplicationController
 
   def show
      @user = User.find(params[:id]) #find User record with ID passed as param
-
   end
+
+  def edit
+     @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      flash[:success] = "User has been updated."
+      redirect_to @user # redirect to updated protest
+    else
+      render 'edit' # if unsuccessful, render edit page again
+    end
+  end
+
+  def destroy
+     @user = User.find(params[:id]) #if current user is an admin, can delete any record
+     @user.destroy
+     redirect_to action: :index
+   end
 
    private
    #In Rails 4, needed parameters must be marked as required
