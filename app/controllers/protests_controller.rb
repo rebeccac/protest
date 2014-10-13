@@ -36,6 +36,7 @@ class ProtestsController < ApplicationController
 
   def show
     @protest = Protest.find(params[:id]) #find Protest record with ID passed as param
+    @user = User.find(@protest.user_id)
   end
 
 def my_protests

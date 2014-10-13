@@ -1,0 +1,24 @@
+<li class="user">
+   <div class="row">
+      <div class="large-1 medium-1 small-1 columns">
+         <%= user.id %>
+      </div>
+      <div class="large-5 medium-5 small-5 columns">
+         <%= user.email %>
+      </div>
+      <div class="large-3 medium-3 small-3 columns">
+         <%= user.current_sign_in_ip %>
+      </div>
+      <div class="large-1 medium-1 small-1 columns">
+         <% if user.admin == true %>
+            <i class="fa fa-check"></i>
+         <% else %>
+            <i class="fa fa-close"></i>
+         <% end %>
+      </div>
+      <div class="large-1 medium-1 small-1 columns">
+         <%= link_to "View", user %>
+      </div>
+
+   </div>
+</li>

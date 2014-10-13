@@ -1,0 +1,42 @@
+@mixin Helvetica {
+   font-family: Helvetica, Arial, sans-serif;
+   font-weight: 200;
+}
+@mixin OpenSans {
+   font-family: 'Open Sans', sans-serif;
+   font-weight: 300;
+}
+
+$orange: #f17a36;
+$yellow: #f3cd36;
+$green: #16b183;
+$pale_blue: #14b9d5;
+$dark_blue: #323a45;
+$cream: #e5d6a7;
+
+$purple: #674fb1;
+$red: #d54343;
+$maroon: #590902;
+
+$white: #f2f2eb;
+$dark_grey: #444444;
+$med_grey: #a2a2a2;
+$pale_grey: #cccccc;
+$charcoal: #282828;
+
+
+/* _user.html.erb li.user - displays each user for admin */
+.user:nth-child(odd) {
+   background-color: $pale_grey;
+}
+.user:nth-child(even) {
+   background-color: $med_grey;
+}
+
+.user {
+   width: 96%;
+   height: auto;
+   padding: 30px 0;
+   margin: 7px auto;
+   @include Helvetica;
+}

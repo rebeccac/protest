@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
 		    protests.paginate(page: params[:page], order: 'created_at DESC', per_page: 10)
 		    #calling this method on a user object so can go through its questions association - scopes questions returned to only return questions that belong to user method is called on
   end
+  def self.all_users(params)
+     all().paginate(page: params[:page], order: 'created_at DESC', per_page: 12)
+
+  end
 end
