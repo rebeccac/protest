@@ -53,7 +53,7 @@ p.white-text {
 }
 .main-content { /* right-hand panel on front page (recent protests) */
    position: absolute;
-   top: 0;
+   top: 20px;
    left: 150px;
    width: calc(100% - 150px);
    height: auto;
@@ -104,7 +104,7 @@ h2.front-page-title {
             width: 100px;
             margin: 10px auto;
             border-radius: 50%;
-            background: url('dotted_background_76percent.png');
+            background: url('dotted_background_92percent.png');
 
             .helper {
                 display: inline-block;

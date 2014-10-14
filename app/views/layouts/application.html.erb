@@ -16,14 +16,18 @@
          <header class="header">
             <h2 class="top_header"><%= link_to "Protest Australia", root_path %></h1>
             <div class="top-menu">
-               <div class="button-small"><i class="fa fa-search"></i></div>
+               <div class="button-small search-icon" id="search-icon"><i class="fa fa-search"></i>
+                  <div id="search-bar" class="search-bar">
+                     <%= render 'common/search_field' %>
+                  </div>
+               </div>
                <div class="button-small"><i class="fa fa-twitter"></i></div>
                <div class="button-small"><i class="fa fa-facebook"></i></div>
-               <% if current_user.try(:admin?) %>
-                  <div class="admin-button"><%= link_to "Admin", admin_path %></div>
-               <% end %>
                <% if signed_in? %>
-                     <div class="button"><%= current_user.email %></div>
+                     <% if current_user.try(:admin?) %>
+                        <div class="button-small"><i class="fa fa-star med-icon yellow-text"></i></div>
+                     <% end %>
+                     <div class="user-email"><%= current_user.email %></div>
                      <%= link_to "My Protests", my_protests_path, class: "button" %> <%= link_to "Sign Out", destroy_user_session_path, :method => :delete, class: "button" %>
                <% else %>
                      <%= link_to "Register", new_user_registration_path, :method => :get, class: "button" %> <%= link_to "Sign In", new_user_session_path, :method => :get, class: "button" %>
@@ -38,6 +42,9 @@
                      <li class="dropdown-menu-item"><%= link_to "Related Sites", related_sites_path %></li>
                      <li class="dropdown-menu-item"><%= link_to "About Us", about_us_path %></li>
                      <li class="dropdown-menu-item"><%= link_to "Contact Us", contact_us_path %></li>
+                     <% if current_user.try(:admin?) %>
+                        <li class="dropdown-menu-item"><%= link_to "Admin", admin_path %></li>
+                     <% end %>
                   </ul><!-- dropdown-menu -->
                </div><!-- id:menu-icon -->
          </header>

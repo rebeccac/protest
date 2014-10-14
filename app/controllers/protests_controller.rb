@@ -1,9 +1,6 @@
 class ProtestsController < ApplicationController
 
    before_filter :auth, only: [:create, :my_protests, :edit, :update, :destroy]
-
-
-
   def index
   	  @protests = Protest.visible(params)
      @heading = "All Protests"
@@ -37,7 +34,9 @@ class ProtestsController < ApplicationController
 
   def show
     @protest = Protest.find(params[:id]) #find Protest record with ID passed as param
-    @user = User.find(@protest.user_id)
+    if current_user.try(:admin?)
+      @user = User.find(@protest.user_id)
+   end
   end
 
 def my_protests
@@ -83,6 +82,11 @@ def destroy
    @protest.destroy
    redirect_to action: :index
 end
+
+ def search
+    @protests = Protest.search(params) #create protests object by calling Protest model's search method and passing params [] (keyword from search form)
+    @heading = "Search results - #{params[:keyword]}"
+  end
 
   private
   #In Rails 4, needed parameters must be marked as required

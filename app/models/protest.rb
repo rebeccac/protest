@@ -22,4 +22,13 @@ class Protest < ActiveRecord::Base
    def self.hidden(params)
       where(visible: false).paginate(page: params[:page], order: 'created_at DESC', per_page: 12)
    end
+   def self.search(params)
+  	   where("title LIKE ? OR date LIKE ? OR time LIKE ? OR starting_location LIKE ? OR state LIKE ? OR email LIKE ?
+        OR organisation LIKE ? OR more_info LIKE ? OR website LIKE ? OR twitter LIKE ? OR facebook LIKE ?
+        OR march_route LIKE ?", "%#{params[:keyword]}%", "%#{params[:keyword]}%", "%#{params[:keyword]}%", "%#{params[:keyword]}%",
+        "%#{params[:keyword]}%", "%#{params[:keyword]}%", "%#{params[:keyword]}%", "%#{params[:keyword]}%", "%#{params[:keyword]}%",
+        "%#{params[:keyword]}%", "%#{params[:keyword]}%", "%#{params[:keyword]}%").paginate(page: params[:page], order: 'created_at DESC',  per_page: 12)
+        #pass keyword as interpolated string (inside %%) as second parameter rather than directly, to protect against SQL Injection.
+   end
+
 end

@@ -1,0 +1,15 @@
+<% provide(:title, 'Search results | Protest Australia') %>
+
+<h1><%= @heading %></h1>
+
+<h3 class="search">Search: </h3><%= render 'common/search_field' %>
+
+<% if @protests.any? %>
+   <ul id="protest_list">
+      <%= render @protests %> <!-- render _protest.html.erb -->
+   </ul>
+   <%= will_paginate %> <!-- calls will_paginate gem & automatically paginates protest results -->
+
+<% else %>
+   <p>There are no results to display</p>
+<% end %>

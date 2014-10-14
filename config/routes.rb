@@ -12,6 +12,8 @@ Protestaustralia::Application.routes.draw do
   match '/protests/hidden', to: 'protests#hidden', via: [:get]
   match '/new', to: 'protests#new', via: [:get]
   match '/my_protests', to: 'protests#my_protests', via: [:get]
+  match '/search', to: 'protests#search', via: [:get]
+
 
   match '/related_sites', to: 'pages#related_sites', via: [:get]
   match '/about_us', to: 'pages#about_us', via: [:get]
