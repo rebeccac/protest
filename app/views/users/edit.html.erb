@@ -8,15 +8,13 @@
          <fieldset class="fieldset">
             <legend class="legend">User Details</legend>
                <%= f.input :email, placeholder: "User's email address", input_html: { class: "textfield", tabindex: "1" } %>
-         </fieldset>
-         <fieldset class="fieldset">
             <%= f.input :admin, label: "Admin" %>
          </fieldset>
 
          <div class="row buttons">
             <div class="12-large columns">
                <div class="centered-contents">
-                  <%= f.submit %>  <%=f.button :button, 'Reset', :type => 'reset' %>
+                  <%= f.submit %>
                </div>
 
             </div>

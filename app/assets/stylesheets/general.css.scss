@@ -26,7 +26,7 @@ $purple: #674fb1;
 $red: #d54343;
 $maroon: #590902;
 
-$white: #f2f2eb;
+$white: #fdfdfd;
 $dark_grey: #444444;
 $med_grey: #a2a2a2;
 $pale_grey: #cccccc;
@@ -43,12 +43,14 @@ body {
    height: auto;
    min-height: 100%;
    overflow: auto;
+   background-color: $white !important;
+
 }
 .container {
    top: 0;
    width: 100%;
    min-height: 100%;
-   background-color: #f2f2eb;
+   background-color: $white !important;
 
    .main-body { /* inside container on application layout */
       float: left;
@@ -76,7 +78,7 @@ body {
    p {
       @include OpenSans;
       font-size: 1em;
-      color: $dark_grey;
+      color: $charcoal;
       margin: 15px 0;
    }
    #message {
@@ -132,11 +134,18 @@ body {
       a:hover   { color: $yellow; }  /* user hovers     */
       a:active  { color: $yellow; }  /* active links    */
 }
+.highlight {
+   font-weight: 200;
+   text-decoration: underline;
+}
+.strong {
+   font-weight: 600;
+}
 
  h3.subheading {
  	@include OpenSans;
  	font-size: 1.5em;
- 	color: $dark_grey;
+ 	color: $charcoal;
  }
 
  h3.search {
@@ -147,19 +156,19 @@ body {
 }
 
  h3.protest-heading {
- 	@include OpenSans;
- 	font-size: 1.1em;
- 	color: $charcoal;
+   font-family: 'Muli', sans-serif;
+   font-size: 1.7em;
+ 	color: $white;
  	font-weight: 300;
- 	margin: 0;
+ // 	margin: 45px 0;
+    width: 100%;
    display: inline-block;
-   margin-left: 60px;
+   text-align: center;
    a:link, a:visited, a:hover, a:active {
       padding-top: 10px;
-      color: $charcoal;
+      color: $white;
    }
  }
-
 
 ul.disc-list { // display normal (disc) list style
    list-style: disc;
@@ -199,12 +208,17 @@ ul.disc-list { // display normal (disc) list style
    text-align: center;
  }
 
-
 .box {
-	width: 90%;
+   width: 100%;
+   border: 1px solid #eee;
+}
+.box-90 {
+   width: 90%;
+}
+.box, .box-90 {
 	height: auto;
 	display: block;
-	margin: 30px auto;
+	margin: 0 auto;
 	padding: 15px;
 }
 

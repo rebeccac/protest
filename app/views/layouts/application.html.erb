@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link href='http://fonts.googleapis.com/css?family=Questrial|Alegreya+Sans+SC|Michroma|Quicksand|Josefin+Sans|Muli|Maven+Pro|Karla|PT+Sans+Caption|Julius+Sans+One|Carrois+Gothic+SC|Numans' rel='stylesheet' type='text/css'>
     <title><%= content_for?(:title) ? yield(:title) : "Protest Australia" %></title>
 
     <%= stylesheet_link_tag "application" %>
@@ -43,7 +43,7 @@
                      <li class="dropdown-menu-item"><%= link_to "About Us", about_us_path %></li>
                      <li class="dropdown-menu-item"><%= link_to "Contact Us", contact_us_path %></li>
                      <% if current_user.try(:admin?) %>
-                        <li class="dropdown-menu-item"><%= link_to "Admin", admin_path %></li>
+                        <li class="dropdown-menu-item"><%= link_to "Admin Panel", admin_path %></li>
                      <% end %>
                   </ul><!-- dropdown-menu -->
                </div><!-- id:menu-icon -->

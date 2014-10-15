@@ -18,7 +18,7 @@ $purple: #674fb1;
 $red: #d54343;
 $maroon: #590902;
 
-$white: #f2f2eb;
+$white: #fdfdfd;
 $dark_grey: #444444;
 $med_grey: #a2a2a2;
 $pale_grey: #cccccc;
@@ -41,7 +41,7 @@ $charcoal: #282828;
    @include Helvetica;
 }
 
-/* show.html */
+/* show.html, edit.html */
 .user-data {
    width: 96%;
    margin: 0 auto;
@@ -50,6 +50,12 @@ $charcoal: #282828;
       li {
          list-style: none;
          padding: 5px 0;
+      }
+   }
+
+   fieldset {
+      input[type=checkbox], label {
+         display: inline-block;
       }
    }
 }
