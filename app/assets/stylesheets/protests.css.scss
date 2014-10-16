@@ -296,12 +296,18 @@ ul#protest_list {
    color: $charcoal;
 }
 
+.s-container {
+   border: 0;
+}
+.s-container,
 .show-protest-container {
    width: 95%;
    height: auto;
-   border: 1px solid #eee;
    background-color: #fff;
    margin: 20px auto;
+}
+.show-protest-container {
+   border: 1px solid #eee;
 
    .columns {
       padding: 0 !important;
@@ -310,7 +316,7 @@ ul#protest_list {
       font-family: 'Questrial', sans-serif;
       font-size: 1.1em;
    }
-   
+
 }
 
 @media all and (max-width: 320px) {
