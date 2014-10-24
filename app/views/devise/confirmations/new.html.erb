@@ -1,14 +1,16 @@
 <% provide(:title, 'Resend Confirmation Instructions | Protest Australia') %>
 
-<h2>Resend confirmation instructions</h2>
+<div class="devise-box">
+   <h3 class="login-subheading header-background">Resend confirmation instructions</h3>
 
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+      <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+        <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+        <div><%= f.label :email %>
+        <%= f.email_field :email, autofocus: true %></div>
 
-  <div><%= f.submit "Resend confirmation instructions" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+        <div class="submit-button-large"><%= f.submit "Resend confirmation instructions" %></div>
+      <% end %>
+      <br>
+      <%= render "devise/shared/links" %>
+</div>

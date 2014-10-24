@@ -32,6 +32,9 @@ $med_grey: #a2a2a2;
 $pale_grey: #cccccc;
 $charcoal: #282828;
 
+$menu-yellow: #f3bf28;
+
+
 * { margin: 0; }
 
 html {
@@ -426,25 +429,65 @@ header.header {
             position: absolute;
             top: 40px;
             right: 0;
+            list-style: none;
             .dropdown-menu-item {
-               padding-left: 20px;
                width: 180px;
-               height: 50px;
-               line-height: 50px;
+               height: 40px;
+               line-height: 40px;
                background: url('dotted_background_92percent.png');
                border-bottom: 1px solid rgba(251,251,251,0.2);
                position: relative;
-               border-left: 5px solid transparent;
+               border-right: 10px solid $charcoal;
+               .dropdown-left-box-icon {
+                  position: relative;
+                  left: 0px;
+                  background-color: transparent;
+                  width: 40px;
+                  height: 40px;
+                  display: inline-block;
+                  text-align: center;
+                  i {
+                     color: transparent;
+                     font-size: 1.7em;
+                     line-height: 40px;
+                  }
+               }
+
                a:link, a:visited, a:hover, a:active {
                   color: $white;
                   @include Helvetica;
                   font-size: 1em;
                   text-decoration: none;
+                  padding-left: 5px;
+                  display: inline-block;
+                  line-height: 40px;
+                  vertical-align: top;
                }
             }
             .dropdown-menu-item:hover {
-               border-left: 5px solid #1f7a7a;
+               .dropdown-left-box-icon {
+                  -webkit-transition: background-color 0.3s !important;
+                  -moz-transition: background-color 0.3s !important;
+                  -ms-transition: background-color 0.3s !important;
+                  -o-transition: background-color 0.3s !important;
+                  transition: background-color 0.3s !important;
+                  display: inline-block;
+                  left: 0;
+                  background-color: $pale_blue;
+                  i {
+                     -webkit-transition: color 0.3s !important;
+                     -moz-transition: color 0.3s !important;
+                     -ms-transition: color 0.3s !important;
+                     -o-transition: color 0.3s !important;
+                     transition: color 0.3s !important;
+                     color: $white;
+                     font-size: 1.7em;
+                  }
+               }
             }
+
+
+
             .dropdown-menu-item:last-child {
                border-bottom: 0;
             }

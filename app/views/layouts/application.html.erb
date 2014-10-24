@@ -36,14 +36,14 @@
                <div class="button-small menu-top-right" id="menu-icon"><i class="fa fa-bars"></i>
 
                   <ul class="dropdown-menu" id="dropdown-menu">
-                     <li class="dropdown-menu-item"><%= link_to "Protests", protests_path %></li>
-                     <li class="dropdown-menu-item"><%= link_to "Add a Protest", new_path %></li>
-                     <li class="dropdown-menu-item"><%= link_to "My Protests", my_protests_path %></li>
-                     <li class="dropdown-menu-item"><%= link_to "Related Sites", related_sites_path %></li>
-                     <li class="dropdown-menu-item"><%= link_to "About Us", about_us_path %></li>
-                     <li class="dropdown-menu-item"><%= link_to "Contact Us", contact_us_path %></li>
+                     <li class="dropdown-menu-item"><div class="dropdown-left-box-icon"><i class="fa fa-twitter"></i></div><%= link_to "Protests", protests_path %></li>
+                     <li class="dropdown-menu-item"><div class="dropdown-left-box-icon"><i class="fa fa-plus"></i></div><%= link_to "Add a Protest", new_path %></li>
+                     <li class="dropdown-menu-item"><div class="dropdown-left-box-icon"><i class="fa fa-user"></i></div><%= link_to "My Protests", my_protests_path %></li>
+                     <li class="dropdown-menu-item"><div class="dropdown-left-box-icon"><i class="fa fa-link"></i></div><%= link_to "Related Sites", related_sites_path %></li>
+                     <li class="dropdown-menu-item"><div class="dropdown-left-box-icon"><i class="fa fa-info"></i></div><%= link_to "About Us", about_us_path %></li>
+                     <li class="dropdown-menu-item"><div class="dropdown-left-box-icon"><i class="fa fa-envelope"></i></div><%= link_to "Contact Us", contact_us_path %></li>
                      <% if current_user.try(:admin?) %>
-                        <li class="dropdown-menu-item"><%= link_to "Admin Panel", admin_path %></li>
+                        <li class="dropdown-menu-item"><div class="dropdown-left-box-icon"><i class="fa fa-gear"></i></div><%= link_to "Admin Panel", admin_path %></li>
                      <% end %>
                   </ul><!-- dropdown-menu -->
                </div><!-- id:menu-icon -->
