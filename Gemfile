@@ -1,12 +1,9 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
 
 group :development, :test do
-  # gem 'sqlite3'
-  gem 'pg'
+  gem 'sqlite3'
 end
 
 group :production do
@@ -48,6 +45,7 @@ gem 'therubyracer'
 gem 'will_paginate', '~> 3.0'
 gem "font-awesome-rails"
 gem 'rails_12factor'
+gem 'url_validator', '~> 0.1.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
