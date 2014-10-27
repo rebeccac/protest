@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
@@ -45,7 +46,8 @@ gem 'less-rails'
 gem 'therubyracer'
 gem 'will_paginate', '~> 3.0'
 gem "font-awesome-rails"
-gem 'pg'
+gem 'rails_12factor'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
