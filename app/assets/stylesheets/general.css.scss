@@ -316,7 +316,7 @@ form {
      border:1px solid $dark_grey;
      color: $dark_grey;
      margin-right: 0.5em;
-     background-color: $cream;
+     background-color: $pale_blue;
      }
    label {
       @include OpenSans;
@@ -451,6 +451,11 @@ header.header {
                      font-size: 1.7em;
                      line-height: 40px;
                   }
+                  img.dropdown-menu-icon {
+                     display: none;
+                     margin: 0 auto;
+                     margin-top: 7px;
+                  }
                }
 
                a:link, a:visited, a:hover, a:active {
@@ -466,20 +471,21 @@ header.header {
             }
             .dropdown-menu-item:hover {
                .dropdown-left-box-icon {
-                  -webkit-transition: background-color 0.3s !important;
-                  -moz-transition: background-color 0.3s !important;
-                  -ms-transition: background-color 0.3s !important;
-                  -o-transition: background-color 0.3s !important;
-                  transition: background-color 0.3s !important;
-                  display: inline-block;
+               -webkit-transition: background-color 0.3s !important;
+               -moz-transition: background-color 0.3s !important;
+               -ms-transition: background-color 0.3s !important;
+               -o-transition: background-color 0.3s !important;
+               transition: background-color 0.3s !important;
+               display: inline-block;
+                  i,
+                  img.dropdown-menu-icon {
+                     display: inline-block;
+                  }
+               }
+               .dropdown-left-box-icon {
                   left: 0;
                   background-color: $pale_blue;
                   i {
-                     -webkit-transition: color 0.3s !important;
-                     -moz-transition: color 0.3s !important;
-                     -ms-transition: color 0.3s !important;
-                     -o-transition: color 0.3s !important;
-                     transition: color 0.3s !important;
                      color: $white;
                      font-size: 1.7em;
                   }
