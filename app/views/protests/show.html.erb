@@ -50,10 +50,10 @@
 					N/A<br>
 				<% end %>
 			</p>
-			<p><span class="highlight red-text">Twitter</span> <% unless @protest.twitter.empty? %>
-				<%= link_to @protest.twitter, "http://www.twitter.com/#{@protest.twitter[1..-1]}", target: "_blank" %><br>
+			<p><span class="highlight red-text">Twitter</span><% unless @protest.twitter.empty? %>
+					<%= link_to @protest.twitter, "http://www.twitter.com/#{@protest.twitter[1..-1]}", target: "_blank" %><br>
 				<% else %>
-					N/A<br>
+				N/A
 				<% end %>
 			</p>
 			<p><span class="highlight red-text">Facebook</span> <% unless @protest.facebook.empty? %>

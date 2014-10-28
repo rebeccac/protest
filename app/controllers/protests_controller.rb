@@ -58,7 +58,7 @@ def update
    if current_user.try(:admin?)
       @protest = Protest.find(params[:id]) #if current user is an admin, can edit any record
    else
-    #Ensure user can only edit his/her own protestss by getting current user's protests and finding the correct
+    #Ensure user can only edit his/her own protests by getting current user's protests and finding the correct
     #protest id - if user doesn't have a protest with that id, won't be able to edit.
     @protest = current_user.protests.find(params[:id])
    end
