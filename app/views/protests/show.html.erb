@@ -50,7 +50,7 @@
 					N/A<br>
 				<% end %>
 			</p>
-			<p><span class="highlight red-text">Twitter</span><% unless @protest.twitter.empty? %>
+			<p><span class="highlight red-text">Twitter</span><% unless @protest.twitter == "@" %>
 					<%= link_to @protest.twitter, "http://www.twitter.com/#{@protest.twitter[1..-1]}", target: "_blank" %><br>
 				<% else %>
 				N/A

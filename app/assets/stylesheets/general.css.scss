@@ -379,7 +379,7 @@ header.header {
    }
    .top-menu {
       position: absolute;
-      top: 10px;
+      top: 5px;
       right: 30px;
       vertical-align: top;
       float: right;
@@ -491,31 +491,8 @@ header.header {
                   }
                }
             }
-
-
-
             .dropdown-menu-item:last-child {
                border-bottom: 0;
-            }
-         }
-      }
-      .search-icon {
-         cursor: pointer;
-         .search-bar {
-            display: none;
-            width: 250px;
-            height: 90px;
-            position: absolute;
-            top: 40px;
-            background: url('dotted_background_92percent.png');
-            border-bottom: 1px solid rgba(251,251,251,0.2);
-            .white-heading {
-               @include Helvetica;
-               color: $white;
-               font-size: 1.1em;
-               font-weight: 400;
-               margin-top: 10px;
-               margin-left: 10px;
             }
          }
       }
@@ -525,31 +502,38 @@ header.header {
 /* ********** Search Form ********** */
 
 .search-form {
-   height: 50px;
+   height: 40px;
    display: inline-block;
-   position: absolute;
-   bottom: 10px;
-   .search-box {
-      width: 180px;
-      height: 24px;
-      margin: 13px 10px;
-      @include Helvetica;
-      font-size: 1em;
-      color: $dark_grey;
-      background-color: $white;
-      display: inline-block;
-   }
-   input[type=submit] {
-      display: inline-block;
-      font-family: 'FontAwesome';
-      color: $green;
-      font-size: 1.5em;
-      background-color: transparent;
-      border: 0;
-      height: 24px;
-      margin: 12px 9px 12px 14px;
-      padding: 1px;
-      vertical-align: top;
+   margin-bottom: 5px;
+   .search-wrapper {
+      width: 220px;
+      height: 40px;
+      .search-box { // input[type=text]
+         display: inline-block;
+         width: 180px;
+         height: 40px;
+         float: left;
+         background-color: $pale_blue;
+         @include OpenSans;
+         font-size: 1em;
+         font-weight: 600;
+         color: $white;
+         border: 0;
+      }
+      input[type=submit] {
+         display: inline-block;
+         margin: 0;
+         width: 40px;
+         height: 40px;
+         position: relative;
+         top: 0;
+         right: 0;
+         background-color: darken($pale_blue, 15%);
+         border: 0;
+         font-family: 'FontAwesome';
+         color: $white;
+         font-size: 1.3em;
+      }
    }
 }
 /* ********** End of Search Form ********** */

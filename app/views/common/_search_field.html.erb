@@ -1,4 +1,6 @@
 <%= form_tag(search_path, method: 'get', class: "search-form") do %>
-   <%= text_field_tag :keyword, nil, size: 20, id: 'keyword', class: "search-box" %>
-   <%= submit_tag 'Search', class: "go", value: "" %>
+      <div class="search-wrapper">
+         <%= text_field_tag :keyword, 'Search', size: 20, id: 'keyword', class: "search-box", :onclick => 'if($(this).val()=="Search"){$(this).val("");};' %>
+         <%= submit_tag 'Search', class: "go", value: "" %>
+      </div>
 <% end %>

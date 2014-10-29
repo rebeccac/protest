@@ -16,12 +16,7 @@
          <header class="header">
             <h2 class="top_header"><%= link_to "Protest Australia", root_path %></h1>
             <div class="top-menu">
-               <div class="button-small search-icon" id="search-icon"><i class="fa fa-search"></i>
-                  <div id="search-bar" class="search-bar">
-                     <div class="white-heading">Search</div>
-                     <%= render 'common/search_field' %>
-                  </div>
-               </div>
+               <%= render 'common/search_field' %>
                <div class="button-small"><i class="fa fa-twitter"></i></div>
                <div class="button-small"><i class="fa fa-facebook"></i></div>
                <% if signed_in? %>
