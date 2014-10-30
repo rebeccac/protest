@@ -151,3 +151,89 @@ $charcoal: #282828;
       }
    }
 }
+
+
+
+/* Top menu bar */
+@media (min-width: 688px) {
+   h2.top-header-full {
+      display: inline-block;
+   }
+   h2.top-header-initials {
+      display: none;
+   }
+}
+@media (max-width: 754px) {
+   h2.top-header-full {
+      display: none;
+   }
+   h2.top-header-initials {
+      display: inline-block;
+   }
+   header.header {
+      .top-menu {
+         .signed-in {
+            display: none;
+         }
+      }
+   }
+}
+
+@media (max-width: 640px) {
+   header.header {
+      .top-menu {
+         .admin-star {
+            display: none;
+         }
+      }
+   }
+   .search-form {
+      .search-wrapper {
+         width: 180px;
+         .search-box {
+            width: 140px;
+         }
+      }
+   }
+}
+
+@media (max-width: 600px) {
+   header.header {
+      .top-menu {
+         // padding: 10px 0;
+         .search-form {
+            display: none;
+         }
+         .search-button {
+            display: inline-block;
+         }
+         .button {
+            padding: 10px 5px;
+         }
+         .small-button {
+            padding: 15px 0;
+         }
+      }
+   }
+}
+
+/* mobile menu */
+@media (max-width: 480px) {
+   header.header {
+      .top-menu {
+         right: 30px;
+      }
+      .menu-icon {
+         right: 0px;
+         .menu-top-right {
+            .dropdown-menu {
+               width: 100%;
+               text-align: left;
+               .dropdown-menu-item {
+                  width: 100%;
+background-color: rgba(55, 55, 55, 0.4);               }
+            }
+         }
+      }
+   }
+}

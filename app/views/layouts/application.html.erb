@@ -14,21 +14,24 @@
   <body>
      <div class="container">
          <header class="header">
-            <h2 class="top_header"><%= link_to "Protest Australia", root_path %></h1>
+            <h2 class="top-header-full"><%= link_to "Protest Australia", root_path %></h2>
+            <h2 class="top-header-initials"><%= link_to "Protest", root_path %><br><%= link_to "Australia", root_path %>
+            </h2>
             <div class="top-menu">
                <%= render 'common/search_field' %>
+               <div class="button-small search-button"><i class="fa fa-search"></i></div>
                <div class="button-small"><i class="fa fa-twitter"></i></div>
                <div class="button-small"><i class="fa fa-facebook"></i></div>
                <% if signed_in? %>
                      <% if current_user.try(:admin?) %>
-                        <div class="button-small"><i class="fa fa-star med-icon yellow-text"></i></div>
+                        <div class="admin-star"><i class="fa fa-star med-icon yellow-text"></i></div>
                      <% end %>
-                     <div class="user-email"><%= current_user.email %></div>
-                     <%= link_to "My Protests", my_protests_path, class: "button" %> <%= link_to "Sign Out", destroy_user_session_path, :method => :delete, class: "button" %>
+                     <div class="signed-in">Signed in</div>
                <% else %>
                      <%= link_to "Register", new_user_registration_path, :method => :get, class: "button" %> <%= link_to "Sign In", new_user_session_path, :method => :get, class: "button" %>
                <% end %>
-
+            </div><!-- top-menu -->
+               <div class="menu-icon">
                <div class="button-small menu-top-right" id="menu-icon"><i class="fa fa-bars"></i>
 
                   <ul class="dropdown-menu" id="dropdown-menu">
@@ -40,6 +43,9 @@
                      <li class="dropdown-menu-item"><div class="dropdown-left-box-icon"><i class="fa fa-envelope"></i></div><%= link_to "Contact Us", contact_us_path %></li>
                      <% if current_user.try(:admin?) %>
                         <li class="dropdown-menu-item"><div class="dropdown-left-box-icon"><i class="fa fa-gear"></i></div><%= link_to "Admin Panel", admin_path %></li>
+                     <% end %>
+                     <% if signed_in? %>
+                        <li class="dropdown-menu-item"><div class="dropdown-left-box-icon"><i class="fa fa-sign-out"></i></div><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
                      <% end %>
                   </ul><!-- dropdown-menu -->
                </div><!-- id:menu-icon -->

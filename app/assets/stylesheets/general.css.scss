@@ -71,12 +71,22 @@ body {
       font-weight: 400;
       margin: 30px 0 50px 30px;
    }
-   h2.top_header {
-      font-size: 1.4em;
+h2.top-header-full {
+   font-size: 1.4em;
+   line-height: 50px;
+
+}
+h2.top-header-initials {
+   font-size: 1em;
+   line-height: 20px;
+   padding: 5px 0;
+   letter-spacing: 1px;
+}
+   h2.top-header-full,
+   h2.top-header-initials {
       margin: 0 0 0 30px;
-      line-height: 50px;
       color: $white;
-      @include Helvetica;
+      font-family: 'Mohave';
    }
    p {
       @include OpenSans;
@@ -378,17 +388,27 @@ header.header {
       color: $white;
    }
    .top-menu {
+      right: 60px;
+   }
+   .menu-icon {
+      right: 20px;
+      width: 100%;
+      z-index: 1;
+      text-align: right;
+      padding: 7px 0;
+   }
+   .top-menu, .menu-icon {
+      display: inline-block;
       position: absolute;
       top: 5px;
-      right: 30px;
       vertical-align: top;
       float: right;
-      .user-email {
-         padding: 0 20px;
+      .signed-in {
+         padding: 0 10px;
       }
       .button,
       .admin-button,
-      .user-email {
+      .signed-in {
          @include Helvetica;
          font-size: 1em;
          background-color: transparent;
@@ -402,7 +422,7 @@ header.header {
       .admin-button {
          padding: 10px 0 10px 15px;
       }
-      .button-small {
+      .button-small, .admin-star {
          padding: 0 5px;
          display: inline-block;
          i {
@@ -417,9 +437,12 @@ header.header {
                a:active  { color: $yellow; }  /* active links    */
          }
       }
+      .search-button {
+         display: none;
+      }
 
       .menu-top-right {
-         padding-left: 40px;
+         padding-left: 20px;
          cursor: pointer;
 
          .dropdown-menu {
@@ -427,7 +450,7 @@ header.header {
             width: 180px;
             height: auto;
             position: absolute;
-            top: 40px;
+            top: 45px;
             right: 0;
             list-style: none;
             .dropdown-menu-item {

@@ -149,7 +149,7 @@ header {
 
 .admin-control-panel {
    width: 100%;
-   margin: 50px 30px;
+   margin: 50px 0;
    display: block;
    a:link, a:visited, a:hover, a:active {
       color: $dark_grey;
@@ -161,6 +161,20 @@ header {
    i {
       font-size: 1.5em;
       color: $red;
+      padding: 0 20px 0 0;
    }
+
+   li.admin {
+      padding: 20px;
+      width: 80%;
+      margin: 0 auto;
+   }
+   li.admin:nth-child(even) {
+      background-color: #eee;
+   }
+   li.admin:nth-child(odd) {
+      background-color: #ccc;
+   }
+
 
 }
